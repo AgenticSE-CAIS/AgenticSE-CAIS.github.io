@@ -118,7 +118,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
   </section>
 
   <!-- Overview -->
-  <section id="overview" class="section">
+  <section id="overview" class="section section-alt">
     <div class="container">
       <div class="row">
         <div class="col-lg-4">
@@ -137,7 +137,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
   </section>
 
   <!-- Submission / CTA -->
-  <section id="submission" class="section section-alt">
+  <section id="submission" class="section">
     <div class="container">
       <div class="row">
         <div class="col-lg-4">
@@ -174,7 +174,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
   </section>
 
   <!-- Important Dates -->
-  <section id="dates" class="section">
+  <section id="dates" class="section section-alt">
     <div class="container">
       <div class="row">
         <div class="col-lg-4">
@@ -198,7 +198,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
   </section>
 
   <!-- Organizers -->
-  <section id="organizers" class="section section-alt">
+  <section id="organizers" class="section">
     <div class="container">
       <div class="row mb-5">
         <div class="col-12">
