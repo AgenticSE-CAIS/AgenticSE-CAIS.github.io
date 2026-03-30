@@ -205,16 +205,16 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
           <h2 class="section-title text-center">Organizing Committee</h2>
         </div>
       </div>
-      <div class="row g-4 justify-content-center">
-        <div class="col-12 col-sm-6 col-lg-4" v-for="o in organizers" :key="o.name">
+      <div class="row g-4 justify-content-center row-cols-1 row-cols-sm-2 row-cols-lg-5">
+        <div class="col" v-for="o in organizers" :key="o.name">
           <a v-if="o.website" :href="o.website" target="_blank" rel="noopener noreferrer" class="text-decoration-none" style="display: block; color: inherit; height: 100%;">
             <div class="organizer-card h-100">
               <img v-if="o.photo" class="avatar" :src="o.photo" :alt="o.name" :style="o.objectPosition ? { objectPosition: o.objectPosition } : {}">
               <div v-else class="avatar d-flex align-items-center justify-content-center bg-light text-muted" style="font-size: 3rem;">
                 <i class="bi bi-person-fill"></i>
               </div>
-              <h5>
-                {{ o.name }} <i class="bi bi-arrow-up-right ms-1 text-muted" style="font-size: 0.8rem; vertical-align: middle;"></i>
+              <h5 style="font-size: 1.05rem" class="mb-2">
+                {{ o.name }}
               </h5>
               <p class="affiliation">{{ o.affiliation }}</p>
             </div>
@@ -224,7 +224,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
             <div v-else class="avatar d-flex align-items-center justify-content-center bg-light text-muted" style="font-size: 3rem;">
               <i class="bi bi-person-fill"></i>
             </div>
-            <h5>{{ o.name }}</h5>
+            <h5 style="font-size: 1.05rem" class="mb-2">{{ o.name }}</h5>
             <p class="affiliation">{{ o.affiliation }}</p>
           </div>
         </div>
