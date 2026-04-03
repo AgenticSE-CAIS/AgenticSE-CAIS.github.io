@@ -146,8 +146,8 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         <div class="col-lg-8">
           <hr class="section-divider d-lg-none">
           <p class="mb-5" style="font-size: 1.1rem; line-height: 1.8;">
-            We invite submissions of original research papers, position papers, and demo papers
-            on the following topics of interest. Papers should follow the ACM format.
+            We invite submissions of original research papers and position papers
+            on the following topics of interest. Papers should follow the same template as CAIS.
             All accepted papers will be presented at the workshop.
           </p>
           
@@ -160,14 +160,16 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 
           <h4 class="fw-bold mb-4 text-uppercase" style="letter-spacing: 0.05em;">Submission Guidelines</h4>
           <ul class="mb-4" style="font-size: 1.1rem; line-height: 1.8; color: var(--text-muted);">
-            <li><strong>Full papers:</strong> up to 4 pages (excluding references)</li>
-            <li><strong>Extended abstracts:</strong> up to 2 pages for position papers, reports, and preliminary results</li>
-            <li><strong>Format:</strong> ACM <span style="color: #e83e8c;">sigconf</span> double-column format — <a href="https://www.acm.org/publications/proceedings-template" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 600;">Download templates</a></li>
+            <li><strong>Long papers:</strong> up to 8 pages (excluding references)</li>
+            <li><strong>Short papers:</strong> up to 4 pages (excluding references)</li>
+            <li><strong>Position papers:</strong> up to 4 pages (excluding references)</li>
+            <li><strong>Format:</strong> ACM double-column format <a href="https://www.acm.org/publications/proceedings-template" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 600;">(download template)</a>. Use <code style="background: #f1f5f9; padding: 0.15rem 0.4rem; font-size: 0.9rem;">\documentclass[sigconf,anonymous,review]{acmart}</code></li>
+            <li><strong>Review:</strong> All submissions are double-blind. Please anonymize your submission.</li>
           </ul>
           
-          <div class="mt-5 p-4 bg-white border" style="border-color: var(--border-color) !important;">
-            <p class="mb-0 fw-bold text-uppercase" style="letter-spacing: 0.05em;">Submission portal coming soon</p>
-          </div>
+          <a href="https://openreview.net/group?id=ACM.org/CAIS/2026/Workshop/AgenticSE" target="_blank" rel="noopener noreferrer" class="btn-register" style="display: inline-block;">
+            Submit via OpenReview <i class="bi bi-arrow-right ms-2"></i>
+          </a>
         </div>
       </div>
     </div>
