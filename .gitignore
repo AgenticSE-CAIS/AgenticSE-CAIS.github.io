@@ -1,0 +1,5 @@
+.DS_Store
+accepted_proposal.tex
+node_modules/
+docs/
+*.log
