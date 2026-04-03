@@ -146,7 +146,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         <div class="col-lg-8">
           <hr class="section-divider d-lg-none">
           <p class="mb-5" style="font-size: 1.1rem; line-height: 1.8;">
-            We invite submissions of original research papers, position papers, and demo papers
+            We invite submissions of original research papers and position papers
             on the following topics of interest. Papers should follow the same template as CAIS.
             All accepted papers will be presented at the workshop.
           </p>
