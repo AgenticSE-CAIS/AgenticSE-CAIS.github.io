@@ -22,7 +22,7 @@ const topics = [
 ]
 
 const dates = [
-  { date: 'April 12, 2026', event: 'Workshop Paper Submission' },
+  { date: 'April 20, 2026', event: 'Workshop Paper Submission' },
   { date: 'May 5, 2026', event: 'Workshop Paper Notification' },
   { date: 'May 26, 2026', event: 'Workshop @ CAIS 2026, San Jose, CA' },
 ]
@@ -99,7 +99,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
           <h1 class="hero-title">
             Agentic Software Engineering
           </h1>
-          <p class="hero-subtitle">Software as the Frontier of Agentic Systems</p>
+          <p class="hero-subtitle">The Frontier of Agentic Systems</p>
           <div class="hero-meta d-flex flex-wrap gap-4 mb-4">
             <div><i class="bi bi-calendar-event"></i> May 26, 2026</div>
             <div><i class="bi bi-geo-alt"></i> San Jose, California</div>
