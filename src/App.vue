@@ -163,7 +163,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
             <li><strong>Long papers:</strong> up to 8 pages (excluding references)</li>
             <li><strong>Short papers:</strong> up to 4 pages (excluding references)</li>
             <li><strong>Position papers:</strong> up to 4 pages (excluding references)</li>
-            <li><strong>Format:</strong> ACM <span style="color: #e83e8c;">sigconf</span> double-column format. Use <code style="background: #f1f5f9; padding: 0.15rem 0.4rem; font-size: 0.9rem;">\documentclass[sigconf]{acmart}</code> in LaTeX — <a href="https://www.acm.org/publications/proceedings-template" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 600;">Download templates</a></li>
+            <li><strong>Format:</strong> ACM double-column format <a href="https://www.acm.org/publications/proceedings-template" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 600;">(download template)</a>. Use <code style="background: #f1f5f9; padding: 0.15rem 0.4rem; font-size: 0.9rem;">\documentclass[sigconf,anonymous,review]{acmart}</code></li>
             <li><strong>Review:</strong> All submissions are double-blind. Please anonymize your submission.</li>
           </ul>
           
