@@ -13,7 +13,7 @@ const sections = [
 ]
 
 const topics = [
-  { title: 'Empirical Studies', desc: 'Analysis of agent behavior from real-world deployments, e.g., leveraging the AIDev dataset.' },
+  { title: 'Empirical Studies', desc: 'Analysis of agent behavior from real-world deployments, e.g., leveraging the <a href="https://huggingface.co/datasets/hao-li/AIDev" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 600;">AIDev</a> dataset.' },
   { title: 'Architectures for Agentic Coding', desc: 'Composition strategies, tool use, memory management, and multi-agent coordination patterns.' },
   { title: 'Evaluation and Testing', desc: 'Moving beyond static code snippets to evaluate agents on repository-level tasks, fault localization, and regression testing.' },
   { title: 'Production Operations', desc: 'Monitoring, debugging, and maintaining agentic systems (MLOps, LLMOps, AgentOps) in production environments.' },
@@ -129,7 +129,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
           <p class="lead mb-4 text-dark" style="font-size: 1.25rem;">
             Agentic Software Engineering marks a fundamental shift from human-centric development to agentic systems that actively participate across the entire software lifecycle. Software engineering has emerged as a key frontier for such agentic systems. Agentic coding systems, such as Claude Code, OpenAI Codex, and GitHub Copilot, are among the first truly autonomous agents deployed in complex, real-world environments. 
             
-            However, agentic systems are still software systems. Advancing this field requires deep collaboration between research communities. This workshop creates a collaborative venue to bridge these communities.
+            However, agentic systems are still software systems. Advancing this field requires deep collaboration between the artificial intelligence and software engineering research communities. This workshop creates a collaborative venue to bridge these two communities.
           </p>
         </div>
       </div>
@@ -147,14 +147,13 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
           <hr class="section-divider d-lg-none">
           <p class="mb-5" style="font-size: 1.1rem; line-height: 1.8;">
             We invite submissions of original research papers and position papers
-            on the following topics of interest. Papers should follow the same template as CAIS.
-            All accepted papers will be presented at the workshop.
+            on the following topics of interest. All accepted papers will be presented at the workshop.
           </p>
           
           <h4 class="fw-bold mb-4 text-uppercase" style="letter-spacing: 0.05em;">Topics of Interest</h4>
           <ul class="mb-5" style="font-size: 1.1rem; line-height: 1.8; color: var(--text-muted); list-style-type: disc; padding-left: 1.5rem;">
             <li v-for="t in topics" :key="t.title" class="mb-2">
-              <strong style="color: var(--primary);">{{ t.title }}:</strong> {{ t.desc }}
+              <strong style="color: var(--primary);">{{ t.title }}:</strong> <span v-html="t.desc"></span>
             </li>
           </ul>
 
