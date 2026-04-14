@@ -22,8 +22,9 @@ const topics = [
 ]
 
 const dates = [
+  { date: 'May 1, 2026', event: 'Workshop Poster Submission' },
   { date: 'April 20, 2026', event: 'Workshop Paper Submission' },
-  { date: 'May 5, 2026', event: 'Workshop Paper Notification' },
+  { date: 'May 5, 2026', event: 'Accept/Reject Notification' },
   { date: 'May 26, 2026', event: 'Workshop @ CAIS 2026, San Jose, CA' },
 ]
 
@@ -146,8 +147,10 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         <div class="col-lg-8">
           <hr class="section-divider d-lg-none">
           <p class="mb-5" style="font-size: 1.1rem; line-height: 1.8;">
-            We invite submissions of original research papers and position papers
-            on the following topics of interest. All accepted papers will be presented at the workshop.
+            The main event will feature invited talks and panel discussions. To showcase the community's work, we offer two distinct submission tracks covering our topics of interest:
+            <br><br>
+            • <strong>Poster Track:</strong> A broader showcase welcoming all forms of work, including new drafts, arXiv preprints, or recently accepted papers.<br>
+            • <strong>Paper Track:</strong> For new, original research (long, short, or position papers).
           </p>
           
           <h4 class="fw-bold mb-4 text-uppercase" style="letter-spacing: 0.05em;">Topics of Interest</h4>
@@ -157,18 +160,32 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
             </li>
           </ul>
 
-          <h4 class="fw-bold mb-4 text-uppercase" style="letter-spacing: 0.05em;">Submission Guidelines</h4>
+          <h4 class="fw-bold mb-4 text-uppercase" style="letter-spacing: 0.05em;">Poster Submission</h4>
           <ul class="mb-4" style="font-size: 1.1rem; line-height: 1.8; color: var(--text-muted);">
-            <li><strong>Long papers:</strong> up to 8 pages (excluding references)</li>
-            <li><strong>Short papers:</strong> up to 4 pages (excluding references)</li>
-            <li><strong>Position papers:</strong> up to 4 pages (excluding references)</li>
+            <li><strong>Format:</strong> a short abstract (max 2,000 characters) and a PDF copy of your poster (max 10 MB).</li>
+            <li><strong>Review:</strong> Submissions will be evaluated for relevance to the workshop topics and potential to generate discussion.</li>
+          </ul>
+
+          <div class="mb-5">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfCdXUMfjh8lGvOWVheOV-onnj9n-pyJp97sCUEa6mF4nGT1A/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="btn-register">
+              Submit Poster (Google Form) <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+          </div>
+
+          <h4 class="fw-bold mb-4 text-uppercase" style="letter-spacing: 0.05em;">Paper Submission</h4>
+          <ul class="mb-4" style="font-size: 1.1rem; line-height: 1.8; color: var(--text-muted);">
+            <li><strong>Long papers:</strong> Up to 8 pages (excluding references).</li>
+            <li><strong>Short/Position papers:</strong> Up to 4 pages (excluding references).</li>
             <li><strong>Format:</strong> ACM double-column format <a href="https://www.acm.org/publications/proceedings-template" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 600;">(download template)</a>. Use <code style="background: #f1f5f9; padding: 0.15rem 0.4rem; font-size: 0.9rem;">\documentclass[sigconf,anonymous,review]{acmart}</code></li>
             <li><strong>Review:</strong> All submissions are double-blind. Please anonymize your submission.</li>
+            <li><strong>Proceedings:</strong> The workshop is a non-archival showcase venue. There will be no formal proceedings.</li>
           </ul>
           
-          <a href="https://openreview.net/group?id=ACM.org/CAIS/2026/Workshop/AgenticSE" target="_blank" rel="noopener noreferrer" class="btn-register" style="display: inline-block;">
-            Submit via OpenReview <i class="bi bi-arrow-right ms-2"></i>
-          </a>
+          <div>
+            <a href="https://openreview.net/group?id=ACM.org/CAIS/2026/Workshop/AgenticSE" target="_blank" rel="noopener noreferrer" class="btn-register">
+              Submit Paper (OpenReview) <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -208,26 +225,21 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
       </div>
       <div class="row g-4 justify-content-center row-cols-1 row-cols-sm-2 row-cols-lg-5">
         <div class="col" v-for="o in organizers" :key="o.name">
-          <a v-if="o.website" :href="o.website" target="_blank" rel="noopener noreferrer" class="text-decoration-none" style="display: block; color: inherit; height: 100%;">
+          <component 
+            :is="o.website ? 'a' : 'div'"
+            v-bind="o.website ? { href: o.website, target: '_blank', rel: 'noopener noreferrer' } : {}"
+            :class="o.website ? 'text-decoration-none' : ''"
+            :style="[o.website ? { display: 'block', color: 'inherit' } : {}, { height: '100%' }]"
+          >
             <div class="organizer-card h-100">
               <img v-if="o.photo" class="avatar" :src="o.photo" :alt="o.name" :style="o.objectPosition ? { objectPosition: o.objectPosition } : {}">
               <div v-else class="avatar d-flex align-items-center justify-content-center bg-light text-muted" style="font-size: 3rem;">
                 <i class="bi bi-person-fill"></i>
               </div>
-              <h5 style="font-size: 1.05rem" class="mb-2">
-                {{ o.name }}
-              </h5>
+              <h5 style="font-size: 1.05rem" class="mb-2">{{ o.name }}</h5>
               <p class="affiliation">{{ o.affiliation }}</p>
             </div>
-          </a>
-          <div v-else class="organizer-card h-100">
-            <img v-if="o.photo" class="avatar" :src="o.photo" :alt="o.name" :style="o.objectPosition ? { objectPosition: o.objectPosition } : {}">
-            <div v-else class="avatar d-flex align-items-center justify-content-center bg-light text-muted" style="font-size: 3rem;">
-              <i class="bi bi-person-fill"></i>
-            </div>
-            <h5 style="font-size: 1.05rem" class="mb-2">{{ o.name }}</h5>
-            <p class="affiliation">{{ o.affiliation }}</p>
-          </div>
+          </component>
         </div>
       </div>
     </div>
