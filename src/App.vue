@@ -147,9 +147,9 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         <div class="col-lg-8">
           <hr class="section-divider d-lg-none">
           <p class="mb-5" style="font-size: 1.1rem; line-height: 1.8;">
-            The main event will feature invited talks and panel discussions. To showcase the community's work, we offer two distinct submission tracks covering our topics of interest:
-            <br><br>
-            • <strong>Poster Track:</strong> A broader showcase welcoming all forms of work, including new drafts, arXiv preprints, or recently accepted papers.<br>
+            The main event will feature invited talks and panel discussions. We offer two submission tracks covering our topics of interest:
+            <br>
+            • <strong>Poster Track:</strong> A broader showcase welcoming all forms of work, including arXiv preprints, recently accepted papers, and relevant past work.<br>
             • <strong>Paper Track:</strong> For new, original research (long, short, or position papers).
           </p>
           
@@ -170,6 +170,9 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSfCdXUMfjh8lGvOWVheOV-onnj9n-pyJp97sCUEa6mF4nGT1A/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="btn-register">
               Submit Poster (Google Form) <i class="bi bi-arrow-right ms-2"></i>
             </a>
+            <p class="mt-2 text-muted" style="font-size: 0.95rem;">
+              <i class="bi bi-info-circle me-1"></i> Authors can keep the form response link to continue updating their submission until the deadline.
+            </p>
           </div>
 
           <h4 class="fw-bold mb-4 text-uppercase" style="letter-spacing: 0.05em;">Paper Submission</h4>
