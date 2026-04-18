@@ -9,6 +9,7 @@ const sections = [
   { id: 'overview', label: 'Overview' },
   { id: 'submission', label: 'Call for Papers' },
   { id: 'dates', label: 'Dates' },
+  { id: 'travel', label: 'Travel Support' },
   { id: 'organizers', label: 'Organizers' },
 ]
 
@@ -23,7 +24,7 @@ const topics = [
 
 const dates = [
   { date: 'May 1, 2026', event: 'Workshop Poster Submission' },
-  { date: 'April 20, 2026', event: 'Workshop Paper Submission' },
+  { date: '<del>April 20, 2026</del> April 25, 2026', event: 'Workshop Paper Submission' },
   { date: 'May 5, 2026', event: 'Accept/Reject Notification' },
   { date: 'May 26, 2026', event: 'Workshop @ CAIS 2026, San Jose, CA' },
 ]
@@ -204,8 +205,8 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         <div class="col-lg-8">
           <hr class="section-divider d-lg-none">
           <div class="date-list">
-            <div class="date-item" v-for="d in dates" :key="d.date">
-              <span class="date-badge">{{ d.date }}</span>
+            <div class="date-item" v-for="d in dates" :key="d.event">
+              <span class="date-badge" v-html="d.date"></span>
               <span class="date-event">{{ d.event }}</span>
             </div>
           </div>
@@ -218,8 +219,52 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
     </div>
   </section>
 
+  <!-- Travel Support -->
+  <section id="travel" class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <h2 class="section-title">Travel<br>Support</h2>
+        </div>
+        <div class="col-lg-8">
+          <hr class="section-divider d-lg-none">
+
+          <div class="mb-5">
+            <h4 class="fw-bold mb-2" style="letter-spacing: 0.05em;">SIGSOFT Travel Support for the AgenticSE Workshop</h4>
+            <p class="mb-4 text-muted">
+              <strong>Deadline:</strong> before May 1, 2026 | <span style="font-weight: 600;">Application Form (Coming Soon)</span>
+            </p>
+
+            <p class="mb-4" style="font-size: 1.1rem; line-height: 1.8;">
+              SIGSOFT is pleased to offer travel support for students and professionals who attend the AgenticSE workshop. This travel support can be used for reimbursing flight, hotel, taxi/cab, shuttle, meals, mileage, and parking, and shall NOT be used for reimbursing other expenses (in particular, conference registration). The support is available for anyone who fits into one or more of the following categories:
+            </p>
+
+            <ul class="mb-4" style="font-size: 1.1rem; line-height: 1.8; list-style-type: disc; padding-left: 1.5rem;">
+              <li>participants who identify as being a member of an underrepresented racial or ethnic group(s) in the place they work,</li>
+              <li>participants based in low income and lower middle income countries as identified by the World Bank List of Economies,</li>
+              <li>undergraduate students, or</li>
+              <li>SIGSOFT student members.</li>
+            </ul>
+
+            <p class="mb-4" style="font-size: 1.1rem; line-height: 1.8;">
+              The support is limited. To apply, please complete the application form (link coming soon) before May 1, 2026. The notifications will be sent by May 5, 2026.
+            </p>
+            
+            <p class="mb-4" style="font-size: 1.1rem; line-height: 1.8;">
+              Due to the limited budget and oftentimes a large number of qualified applicants, we can provide only partial support for attendance.
+            </p>
+
+            <p class="mb-0" style="font-size: 1.1rem; line-height: 1.8;">
+              Please do not apply multiple times. Only one application will be considered. You will receive an email confirmation that allows you to update your application.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Organizers -->
-  <section id="organizers" class="section">
+  <section id="organizers" class="section section-alt">
     <div class="container">
       <div class="row mb-5">
         <div class="col-12">
