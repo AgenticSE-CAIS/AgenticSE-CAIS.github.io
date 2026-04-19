@@ -165,6 +165,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
           <ul class="mb-4" style="font-size: 1.1rem; line-height: 1.8; color: var(--text-muted);">
             <li><strong>Format:</strong> a short abstract (max 2,000 characters) and a PDF copy of your poster (max 10 MB).</li>
             <li><strong>Review:</strong> Submissions will be evaluated for relevance to the workshop topics and potential to generate discussion.</li>
+            <li><strong>Early Notification:</strong> <span style="color: var(--primary); font-weight: 600;">Please submit when ready! We will review and notify you as soon as possible.</span></li>
           </ul>
 
           <div class="mb-5">
@@ -232,7 +233,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
           <div class="mb-5">
             <h4 class="fw-bold mb-2" style="letter-spacing: 0.05em;">SIGSOFT Travel Support for the AgenticSE Workshop</h4>
             <p class="mb-4 text-muted">
-              <strong>Deadline:</strong> before May 1, 2026 | <span style="font-weight: 600;">Application Form (Coming Soon)</span>
+              <strong>Deadline:</strong> before April 27, 2026 | <a href="https://docs.google.com/forms/d/e/1FAIpQLSf-afN-DnpfnwESH6su0PuYPLmcAsskPyRCNW2acI2jWOnL6w/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 600; text-decoration: underline; text-underline-offset: 4px;">Application Form</a>
             </p>
 
             <p class="mb-4" style="font-size: 1.1rem; line-height: 1.8;">
@@ -243,11 +244,11 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
               <li>participants who identify as being a member of an underrepresented racial or ethnic group(s) in the place they work,</li>
               <li>participants based in low income and lower middle income countries as identified by the World Bank List of Economies,</li>
               <li>undergraduate students, or</li>
-              <li>SIGSOFT student members.</li>
+              <li><a href="https://www.acm.org/special-interest-groups/sigs/sigsoft" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: underline; text-underline-offset: 4px;">SIGSOFT</a> members (both student and professional, yearly fee is $20).</li>
             </ul>
 
             <p class="mb-4" style="font-size: 1.1rem; line-height: 1.8;">
-              The support is limited. To apply, please complete the application form (link coming soon) before May 1, 2026. The notifications will be sent by May 5, 2026.
+              The support is limited. To apply, please complete the <a href="https://docs.google.com/forms/d/e/1FAIpQLSf-afN-DnpfnwESH6su0PuYPLmcAsskPyRCNW2acI2jWOnL6w/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: underline; text-underline-offset: 4px;">application form</a> before April 27. The notifications will be sent by May 1.
             </p>
             
             <p class="mb-4" style="font-size: 1.1rem; line-height: 1.8;">
