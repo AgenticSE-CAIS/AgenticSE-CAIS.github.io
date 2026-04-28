@@ -24,7 +24,7 @@ const topics = [
 
 const dates = [
   { date: 'May 1, 2026', event: 'Workshop Poster Submission' },
-  { date: '<del>April 20, 2026</del> April 25, 2026', event: 'Workshop Paper Submission' },
+  { date: '<del>April 20</del>, <del>April 25</del>, April 28, 2026', event: 'Workshop Paper Submission' },
   { date: 'May 5, 2026', event: 'Accept/Reject Notification' },
   { date: 'May 26, 2026', event: 'Workshop @ CAIS 2026, San Jose, CA' },
 ]
