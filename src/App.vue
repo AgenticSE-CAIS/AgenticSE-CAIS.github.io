@@ -11,6 +11,7 @@ const sections = [
   { id: 'dates', label: 'Dates' },
   { id: 'travel', label: 'Travel Support' },
   { id: 'organizers', label: 'Organizers' },
+  { id: 'pc', label: 'Program Committee' },
 ]
 
 const topics = [
@@ -23,9 +24,9 @@ const topics = [
 ]
 
 const dates = [
-  { date: 'May 1, 2026', event: 'Workshop Poster Submission' },
-  { date: '<del>April 20</del>, <del>April 25</del>, April 28, 2026', event: 'Workshop Paper Submission' },
-  { date: 'May 5, 2026', event: 'Accept/Reject Notification' },
+  { date: '<del>May 1, 2026</del>', event: 'Workshop Poster Submission' },
+  { date: '<del>April 20</del>, <del>April 25</del>, <del>April 28, 2026</del>', event: 'Workshop Paper Submission' },
+  { date: '<del>May 5, 2026</del>', event: 'Accept/Reject Notification' },
   { date: 'May 26, 2026', event: 'Workshop @ CAIS 2026, San Jose, CA' },
 ]
 
@@ -39,6 +40,21 @@ const organizers = [
   { name: 'Satish Chandra', website: 'https://sites.google.com/site/schandraacmorg/', photo: '/images/satish_chandra.jpg', affiliation: 'Meta Platforms, Inc.' },
   { name: 'Thomas Zimmermann', website: 'https://thomas-zimmermann.com/', photo: '/images/thomaszimmermann.jpg', affiliation: 'UC Irvine' },
   { name: 'Ahmed E. Hassan', website: 'https://research.cs.queensu.ca/home/ahmed/home/', photo: '/images/ahmedhassan.jpg', affiliation: "Queen's University" },
+]
+
+const pc = [
+  { name: 'Saima Afrin', affiliation: 'College of William and Mary' },
+  { name: 'Joseph Axisa', affiliation: 'Google' },
+  { name: 'Hema Sekhar Reddy Busireddy', affiliation: 'Google' },
+  { name: 'Advitya Gemawat', affiliation: 'Microsoft' },
+  { name: 'Jiayi Geng', affiliation: 'Carnegie Mellon University' },
+  { name: 'Anwar Ghammam', affiliation: 'University of Michigan-Dearborn' },
+  { name: 'Nishant Gupta', affiliation: 'Meta' },
+  { name: 'Yinglong Li', affiliation: 'Google' },
+  { name: 'Lintang Sutawika', affiliation: 'Carnegie Mellon University' },
+  { name: 'Zehao Wang', affiliation: 'Concordia University' },
+  { name: 'Haoxiang Zhang', affiliation: "Queen's University" },
+  { name: 'Yu Shi', affiliation: "Queen's University", role: 'Web Chair' },
 ]
 
 function scrollTo(id) {
@@ -289,6 +305,27 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
               <p class="affiliation">{{ o.affiliation }}</p>
             </div>
           </component>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Program Committee -->
+  <section id="pc" class="section">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-12">
+          <h2 class="section-title text-center">Program Committee</h2>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <ul class="pc-list">
+            <li v-for="p in pc" :key="p.name" class="pc-item">
+              <strong>{{ p.name }}</strong><span v-if="p.role" class="text-muted"> ({{ p.role }})</span>
+              <span class="text-muted"> — {{ p.affiliation }}</span>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

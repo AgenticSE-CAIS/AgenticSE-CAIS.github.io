@@ -227,6 +227,22 @@ body {
   margin-bottom: 0;
 }
 
+/* Program Committee */
+.pc-list {
+  list-style: none;
+  padding: 0;
+}
+
+.pc-item {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 1.05rem;
+}
+
+.pc-item:last-child {
+  border-bottom: none;
+}
+
 /* Footer */
 .site-footer {
   background: var(--primary);
