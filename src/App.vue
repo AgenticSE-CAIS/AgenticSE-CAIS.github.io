@@ -11,6 +11,7 @@ const sections = [
   { id: 'dates', label: 'Dates' },
   { id: 'travel', label: 'Travel Support' },
   { id: 'organizers', label: 'Organizers' },
+  { id: 'pc', label: 'Program Committee' },
 ]
 
 const topics = [
@@ -39,6 +40,21 @@ const organizers = [
   { name: 'Satish Chandra', website: 'https://sites.google.com/site/schandraacmorg/', photo: '/images/satish_chandra.jpg', affiliation: 'Meta Platforms, Inc.' },
   { name: 'Thomas Zimmermann', website: 'https://thomas-zimmermann.com/', photo: '/images/thomaszimmermann.jpg', affiliation: 'UC Irvine' },
   { name: 'Ahmed E. Hassan', website: 'https://research.cs.queensu.ca/home/ahmed/home/', photo: '/images/ahmedhassan.jpg', affiliation: "Queen's University" },
+]
+
+const pc = [
+  { name: 'Saima Afrin', title: 'PhD Student', affiliation: 'College of William and Mary' },
+  { name: 'Joseph Axisa', title: 'Software Engineer', affiliation: 'Google' },
+  { name: 'Hema Sekhar Reddy Busireddy', title: 'Researcher', affiliation: 'Google' },
+  { name: 'Advitya Gemawat', title: 'Researcher', affiliation: 'Microsoft' },
+  { name: 'Jiayi Geng', title: 'PhD Student', affiliation: 'Carnegie Mellon University' },
+  { name: 'Anwar Ghammam', title: 'Assistant Professor', affiliation: 'University of Michigan-Dearborn' },
+  { name: 'Nishant Gupta', title: 'Researcher', affiliation: 'Meta' },
+  { name: 'Yinglong Li', title: 'Software Engineer', affiliation: 'Google' },
+  { name: 'Yu Shi', title: 'PhD Student', affiliation: "Queen's University", role: 'Web Chair' },
+  { name: 'Lintang Sutawika', title: 'PhD Student', affiliation: 'Carnegie Mellon University' },
+  { name: 'Zehao Wang', title: 'PhD Student', affiliation: 'Concordia University' },
+  { name: 'Haoxiang Zhang', title: 'Adjunct Research Associate', affiliation: "Queen's University" },
 ]
 
 function scrollTo(id) {
@@ -289,6 +305,27 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
               <p class="affiliation">{{ o.affiliation }}</p>
             </div>
           </component>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Program Committee -->
+  <section id="pc" class="section">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-12">
+          <h2 class="section-title text-center">Program Committee</h2>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <ul class="pc-list">
+            <li v-for="p in pc" :key="p.name" class="pc-item">
+              <strong>{{ p.name }}</strong><span v-if="p.role" class="text-muted"> ({{ p.role }})</span>
+              <span class="text-muted"> — {{ p.title }}, {{ p.affiliation }}</span>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
