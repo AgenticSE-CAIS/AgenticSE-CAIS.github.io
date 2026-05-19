@@ -6,12 +6,10 @@ const navCollapsed = ref(true)
 
 const sections = [
   { id: 'home', label: 'Home' },
-  { id: 'overview', label: 'Overview' },
+  { id: 'speakers', label: 'Speakers' },
   { id: 'submission', label: 'Call for Papers' },
   { id: 'dates', label: 'Dates' },
-  { id: 'travel', label: 'Travel Support' },
   { id: 'organizers', label: 'Organizers' },
-  { id: 'pc', label: 'Program Committee' },
 ]
 
 const topics = [
@@ -30,9 +28,19 @@ const dates = [
   { date: 'May 26, 2026', event: 'Workshop @ CAIS 2026, San Jose, CA' },
 ]
 
+const speakers = [
+  // { name: 'Niranjan Tulpule (tentative)', affiliation: 'Developer AI @ Google', website: 'https://www.linkedin.com/in/niranjantulpule/', photo: '' },
+  { name: 'Graham Neubig', affiliation: 'CMU & All Hands AI', website: 'http://www.phontron.com/', photo: '/images/neubig_graham.png' },
+  { name: 'Erik Meijer', affiliation: 'Leibniz Labs & Normal Computing', website: 'https://www.linkedin.com/in/erikmeijer1', photo: '/images/erik.jpg' },
+  { name: 'Behrooz Omidvar-Tehrani', affiliation: 'AWS Agentic AI', website: 'https://omidvartehrani.github.io/', photo: '/images/behrooz.png' },
+  { name: 'Lin Shi', affiliation: 'Cornell Tech', website: 'https://slimshilin.github.io/', photo: '/images/lin_shi.jpg' },
+  { name: 'Jonathan "Peli" de Halleux', affiliation: 'Microsoft', website: 'https://www.linkedin.com/in/pelidehalleux/', photo: '/images/peli.png' },
+  { name: 'Waleed Kadous', affiliation: 'Cluesmith', website: 'https://www.linkedin.com/in/waleedkadous/', photo: '/images/waleed.jpeg' },
+]
+
 const organizers = [
   { name: 'Hao Li', website: 'https://leo-lihao.github.io', photo: '/images/haoli.jpg', affiliation: "Queen's University"},
-  { name: 'Jie M. Zhang', website: 'https://sites.google.com/view/jie-zhang', photo: '/images/jiezhang.jpg', affiliation: "King's College London", objectPosition: '50% 10%'},
+  { name: 'Jie M. Zhang', website: 'https://sites.google.com/view/jie-zhang', photo: '/images/jiezhang.jpg', affiliation: "King's College London", objectPosition: '50% 10%' },
   { name: 'Chao Peng', website: 'https://chao-peng.github.io/', photo: '/images/peng_chao.jpg', affiliation: 'ByteDance' },
   { name: 'Shweta Garg', website: 'https://shwetagarg-dev.github.io/', photo: '/images/shweta_garg.jpg', affiliation: 'Amazon' },
   { name: 'Lingming Zhang', website: 'https://lingming.cs.illinois.edu/', photo: '/images/lingming_zhang.jpeg', affiliation: 'UIUC', objectPosition: '50% 0%'},
@@ -135,7 +143,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
     </div>
   </section>
 
-  <!-- Overview -->
+  <!-- Overview 
   <section id="overview" class="section section-alt">
     <div class="container">
       <div class="row">
@@ -153,9 +161,40 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
       </div>
     </div>
   </section>
+  -->
+
+  <!-- Invited Speakers -->
+  <section id="speakers" class="section section-alt">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-12">
+          <h2 class="section-title text-center">Invited Speakers</h2>
+        </div>
+      </div>
+      <div class="row g-4 justify-content-center row-cols-1 row-cols-sm-2 row-cols-lg-5">
+        <div class="col" v-for="s in speakers" :key="s.name">
+          <component 
+            :is="s.website ? 'a' : 'div'"
+            v-bind="s.website ? { href: s.website, target: '_blank', rel: 'noopener noreferrer' } : {}"
+            :class="s.website ? 'text-decoration-none' : ''"
+            :style="[s.website ? { display: 'block', color: 'inherit' } : {}, { height: '100%' }]"
+          >
+            <div class="organizer-card h-100">
+              <img v-if="s.photo" class="avatar" :src="s.photo" :alt="s.name" :style="s.objectPosition ? { objectPosition: s.objectPosition } : {}">
+              <div v-else class="avatar d-flex align-items-center justify-content-center bg-light text-muted" style="font-size: 3rem;">
+                <i class="bi bi-person-fill"></i>
+              </div>
+              <h5 style="font-size: 1.05rem" class="mb-2">{{ s.name }}</h5>
+              <p class="affiliation">{{ s.affiliation }}</p>
+            </div>
+          </component>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Submission / CTA -->
-  <section id="submission" class="section">
+  <section id="submission" class="section section-alt">
     <div class="container">
       <div class="row">
         <div class="col-lg-4">
@@ -311,7 +350,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
   </section>
 
   <!-- Program Committee -->
-  <section id="pc" class="section">
+  <section id="pc" class="section section-alt">
     <div class="container">
       <div class="row mb-5">
         <div class="col-12">
