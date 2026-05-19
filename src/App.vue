@@ -33,7 +33,7 @@ const speakers = [
   {
     name: 'Behrooz Omidvar-Tehrani',
     affiliation: 'AWS Agentic AI',
-    website: 'https://omidvartehrani.github.io/',
+    website: 'https://www.linkedin.com/in/behroozomidvar',
     photo: '/images/behrooz.png',
     title: 'Building the Brain for Coding Agents',
     abstract: 'Coding agents already incorporate forms of memory, including project context, session histories, and user preferences. However, their memory architectures remain fragmented and insufficient for sustaining the continuity expected of a true programming partner. This talk examines what a principled memory system for coding agents entails. We discuss how distinct forms of remembering, from recalling past interactions to internalizing codebase structure to learning reusable strategies, contribute to the developer experience in fundamentally different ways. Drawing on concrete examples from production systems like Kiro and Claude Code, we identify where current designs succeed and where critical gaps persist, particularly around lifecycle governance, real-time retrieval, and long-term adaptation.',
