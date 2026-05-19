@@ -6,6 +6,7 @@ const navCollapsed = ref(true)
 
 const sections = [
   { id: 'home', label: 'Home' },
+  { id: 'program', label: 'Schedule' },
   { id: 'speakers', label: 'Speakers' },
   { id: 'submission', label: 'Call for Papers' },
   { id: 'dates', label: 'Dates' },
@@ -22,60 +23,97 @@ const topics = [
 ]
 
 const dates = [
-  { date: '<del>May 1, 2026</del>', event: 'Workshop Poster Submission' },
-  { date: '<del>April 20</del>, <del>April 25</del>, <del>April 28, 2026</del>', event: 'Workshop Paper Submission' },
-  { date: '<del>May 5, 2026</del>', event: 'Accept/Reject Notification' },
+  { date: '<del>May 1, 2026</del>', event: '<del>Workshop Poster Submission</del>' },
+  { date: '<del>April 20</del>, <del>April 25</del>, <del>April 28, 2026</del>', event: '<del>Workshop Paper Submission</del>' },
+  { date: '<del>May 5, 2026</del>', event: '<del>Accept/Reject Notification</del>' },
   { date: 'May 26, 2026', event: 'Workshop @ CAIS 2026, San Jose, CA' },
 ]
 
+const programSchedule = [
+  { time: '08:30 - 08:40 am', title: 'Opening Remarks' },
+  { time: '08:40 - 09:40 am', title: 'AI in SE: Google\'s DevAI Journey for Internal Developer Productivity', speaker: 'Niranjan Tulpule', affiliation: 'VP, Developer AI @ Google', speakerId: 'speaker-niranjan' },
+  { time: '09:40 - 10:40 am', title: 'Poster Session & Coffee Break' },
+  { time: '10:40 - 11:10 am', title: 'Inside The Agent Factory', speaker: 'Jonathan "Peli" de Halleux', affiliation: 'Microsoft Research & GitHub Next', speakerId: 'speaker-peli' },
+  { time: '11:10 - 11:40 am', title: 'Two Futures of Programming', speaker: 'Graham Neubig', affiliation: 'Carnegie Mellon University & All Hands AI', speakerId: 'speaker-neubig' },
+  { time: '11:40 - 12:30 pm', title: 'Panel' },
+  { time: '12:30 - 1:30 pm', title: 'Lunch' },
+  { time: '1:30 - 2:30 pm', title: 'In Code They Act, In Proof We Trust', speaker: 'Erik Meijer', affiliation: 'Leibniz Labs & Normal Computing', speakerId: 'speaker-erik' },
+  { time: '2:30 - 3:00 pm', title: 'Building the Brain for Coding Agents', speaker: 'Behrooz Omidvar-Tehrani', affiliation: 'Science Lead @ AWS Agentic AI', speakerId: 'speaker-behrooz' },
+  { time: '3:00 - 3:30 pm', title: 'Coffee Break' },
+  { time: '3:30 - 4:00 pm', title: 'Codev: An Operating System for AI and Humans to Work Together', speaker: 'Waleed Kadous', affiliation: 'Founder @ Cluesmith', speakerId: 'speaker-waleed' },
+  { time: '4:00 - 4:30 pm', title: 'Talk Title Coming Soon', speaker: 'Lin Shi', affiliation: 'Cornell Tech', speakerId: 'speaker-lin' },
+  { time: '4:30 - 5:20 pm', title: 'Panel' },
+  { time: '5:20 - 5:30 pm', title: 'Closing Remarks' },
+]
+
 const speakers = [
-  // { name: 'Niranjan Tulpule (tentative)', affiliation: 'Developer AI @ Google', website: 'https://www.linkedin.com/in/niranjantulpule/', photo: '' },
   {
-    name: 'Behrooz Omidvar-Tehrani',
-    affiliation: 'AWS Agentic AI',
-    website: 'https://www.linkedin.com/in/behroozomidvar',
-    photo: '/images/behrooz.png',
-    title: 'Building the Brain for Coding Agents',
-    abstract: 'Coding agents already incorporate forms of memory, including project context, session histories, and user preferences. However, their memory architectures remain fragmented and insufficient for sustaining the continuity expected of a true programming partner. This talk examines what a principled memory system for coding agents entails. We discuss how distinct forms of remembering, from recalling past interactions to internalizing codebase structure to learning reusable strategies, contribute to the developer experience in fundamentally different ways. Drawing on concrete examples from production systems like Kiro and Claude Code, we identify where current designs succeed and where critical gaps persist, particularly around lifecycle governance, real-time retrieval, and long-term adaptation.',
-    bio: 'Behrooz Omidvar-Tehrani is a Senior Applied Scientist and Science Lead at AWS Agentic AI, where he drives research on agentic code transformation and coding agents. Previously, he was a Research Scientist at LIG (Grenoble Informatics Laboratory) and NAVER LABS Europe, and a Postdoctoral Researcher at The Ohio State University. He holds a PhD in Mathematics and Computer Science from Université Grenoble Alpes.',
+    id: 'speaker-niranjan',
+    name: 'Niranjan Tulpule',
+    affiliation: 'VP, Developer AI @ Google',
+    website: 'https://www.linkedin.com/in/niranjantulpule/',
+    photo: '/images/niranjan.jpeg',
+    time: '08:40 - 09:40 am',
+    title: 'AI in SE: Google\'s DevAI Journey for Internal Developer Productivity',
+    abstract: '<p>In this talk, Niranjan will cover the journey of building AI capabilities across the Software Engineering Lifecycle, scaling adoption, and driving culture change across Google.</p><p>This talk will also cover how Google uses Antigravity internally across Google\'s internal monorepo and git ecosystems, and some of the agents deployed to take on autonomous, ambient tasks.</p><p>This journey required balancing rigorous SE standards and quality attributes while rapidly applying frontier GenAI innovations, designing new benchmarks and AI-native metrics, and changing developer infrastructure and tools from a purely assistive to an agentic approach.</p><p>Google\'s vast scale and diversity of ecosystems present a unique challenge, especially as the volume of code grows exponentially.</p>',
+    bio: 'Niranjan Tulpule is the Vice President of Developer AI at Google, where he leads initiatives to fundamentally transform software creation and delivery across the company. With over 20 years of experience in developer tools, he brings deep domain expertise in applying artificial intelligence to software engineering. Niranjan has been a core part of Google\'s engineering organization since August 2005. Prior to his current role, he contributed to and led engineering efforts across several major product areas, including Core Developer, Google Cloud DevOps, Firebase, Google+, Gmail, Google Chrome, and Google Desktop.',
   },
   {
-    name: 'Erik Meijer',
-    affiliation: 'Leibniz Labs & Normal Computing',
-    website: 'https://www.linkedin.com/in/erikmeijer1',
-    photo: '/images/erik.jpg',
-    title: 'In Code They Act, In Proof We Trust',
-    abstract: '<p>AI agents today execute on blind trust, and the failure modes are already in the headlines: a dealership chatbot agreeing to sell a $76,000 Chevy Tahoe for $1, a coding agent wiping a production database during a code freeze, an "agent skill" quietly installing a keylogger on a developer\'s machine. These are not edge cases. They are the predictable consequence of allowing agents to act without any mechanical guarantee of correctness or safety.</p><p>Execution is irreversible. You cannot unsend a message, unwire a payment, or un-delete a database. In that regime, permitting an unsafe action costs far more than withholding a safe one, and thus the economically rational choice is to refuse to let agents act on unchecked intent alone.</p><p>Automind is an agent harness that enforces this discipline by construction. Before any action runs, the agent must submit its execution plan together with a machine-checkable proof of safety and correctness, written in Universalis, a literate logic programming language designed to be read by humans and verified by machines. A small, auditable checker decides whether the plan is allowed to execute.</p><p>By left-shifting the trust boundary, we no longer have to trust the agent\'s proposal, or even its proof; only the checker. Policy compliance becomes a static property, established before the first side effect. We can finally demand formal proofs, not vibes, from the agents we deploy.</p>',
-    bio: 'Erik Meijer is an accomplished language, API, and type system designer who has worked on the design of Haskell, Mondrian, C#, Visual Basic, Dart, and Hack, and advised on the design of Java, Scala, JavaScript, and Kotlin. He is the original inventor of Rx (Reactive Extensions). At Microsoft, he led incubation around Cloud Programmability; at Facebook, he revamped the server-side programming stack and founded a team building reactive backend infrastructure for the social graph. He holds a honorary professorship in Programming Language Design at the University of Nottingham, has over 149 granted patents, and an h-index of 47.',
+    id: 'speaker-peli',
+    name: 'Jonathan "Peli" de Halleux',
+    affiliation: 'Microsoft Research & GitHub Next',
+    website: 'https://www.linkedin.com/in/pelidehalleux/',
+    photo: '/images/peli.png',
+    time: '10:40 - 11:10 am',
+    title: 'Inside The Agent Factory',
+    abstract: 'GitHub Agentic Workflows delivers safe and scalable repository automation on top of GitHub Actions and Copilot CLI. Most interestingly, Agentic Workflows is written almost exclusively by agents and used to automate its own software life cycle. In this talk, Peli de Halleux will share lessons learned while building software at scale with the help of 200 daily agents, helping through documentation, testing, specification enforcement or mining or even styling the output of the CLI. We will discuss processes that were discovered during this practice that hint at the future of software factories as Agentic Human Processes.',
+    bio: 'Jonathan "Peli" de Halleux joined the Foundations for Software Engineering (new RiSE) in October 2006. Peli worked in the CLR as a SDET in charge of the Just In Time compiler (2004-2006). Before joining Microsoft, Peli earned a PhD in Applied Mathematics from the Catholic University of Louvain (2000-2004). During his time at RiSE, he built Pex (dynamic symbolic execution), MakeCode (K12 coding editors), GenAIScript (LLM scripting) and recently GitHub Agentic Workflows.',
   },
   {
+    id: 'speaker-neubig',
     name: 'Graham Neubig',
-    affiliation: 'CMU & All Hands AI',
+    affiliation: 'Carnegie Mellon University & All Hands AI',
     website: 'http://www.phontron.com/',
     photo: '/images/neubig_graham.png',
+    time: '11:10 - 11:40 am',
     title: 'Two Futures of Programming',
     abstract: 'The agentic coding that has made shock waves across the software engineering world tends to be largely oriented around synchronous new feature development — a programmer works together with an agent and monitors its progress as the agent progresses. However, within software engineering, there are also many other tasks such as deployment, monitoring, maintenance, and upgrades which take as much or even more time. In this talk I will discuss about how the requirements for agents differ between the two varieties of tasks, and some research work that we are doing to make agents better for repetitive and mundane tasks, allowing programmers to focus on more creative work.',
     bio: 'Graham Neubig is an associate professor at the Language Technologies Institute of Carnegie Mellon University and Chief Scientist at OpenHands. His research focuses on large language models, including both fundamental advances in model capabilities and applications to tasks such as software development. His final goal is that every person in the world should be able to communicate with each-other, and with computers in their own language. He also contributes to making NLP research more accessible through open publishing of research papers, advanced NLP course materials and video lectures, and open-source software, all of which are available on his web site.',
   },
   {
-    name: 'Jonathan "Peli" de Halleux',
-    affiliation: 'Microsoft',
-    website: 'https://www.linkedin.com/in/pelidehalleux/',
-    photo: '/images/peli.png',
-    title: 'Inside The Agent Factory',
-    abstract: 'GitHub Agentic Workflows delivers safe and scalable repository automation on top of GitHub Actions and Copilot CLI. Most interestingly, Agentic Workflows is written almost exclusively by agents and used to automate its own software life cycle. In this talk, Peli de Halleux will share lessons learned while building software at scale with the help of 200 daily agents, helping through documentation, testing, specification enforcement or mining or even styling the output of the CLI. We will discuss processes that were discovered during this practice that hint at the future of software factories as Agentic Human Processes.',
-    bio: 'Jonathan "Peli" de Halleux joined the Foundations for Software Engineering (new RiSE) in October 2006. Peli worked in the CLR as a SDET in charge of the Just In Time compiler (2004-2006). Before joining Microsoft, Peli earned a PhD in Applied Mathematics from the Catholic University of Louvain (2000-2004). During his time at RiSE, he built Pex (dynamic symbolic execution), MakeCode (K12 coding editors), GenAIScript (LLM scripting) and recently GitHub Agentic Workflows.',
+    id: 'speaker-erik',
+    name: 'Erik Meijer',
+    affiliation: 'Leibniz Labs & Normal Computing',
+    website: 'https://www.linkedin.com/in/erikmeijer1',
+    photo: '/images/erik.jpg',
+    time: '1:30 - 2:30 pm',
+    title: 'In Code They Act, In Proof We Trust',
+    abstract: '<p>AI agents today execute on blind trust, and the failure modes are already in the headlines: a dealership chatbot agreeing to sell a $76,000 Chevy Tahoe for $1, a coding agent wiping a production database during a code freeze, an "agent skill" quietly installing a keylogger on a developer\'s machine. These are not edge cases. They are the predictable consequence of allowing agents to act without any mechanical guarantee of correctness or safety.</p><p>Execution is irreversible. You cannot unsend a message, unwire a payment, or un-delete a database. In that regime, permitting an unsafe action costs far more than withholding a safe one, and thus the economically rational choice is to refuse to let agents act on unchecked intent alone.</p><p>Automind is an agent harness that enforces this discipline by construction. Before any action runs, the agent must submit its execution plan together with a machine-checkable proof of safety and correctness, written in Universalis, a literate logic programming language designed to be read by humans and verified by machines. A small, auditable checker decides whether the plan is allowed to execute.</p><p>By left-shifting the trust boundary, we no longer have to trust the agent\'s proposal, or even its proof; only the checker. Policy compliance becomes a static property, established before the first side effect. We can finally demand formal proofs, not vibes, from the agents we deploy.</p>',
+    bio: 'Erik Meijer is an accomplished language, API, and type system designer who has worked on the design of Haskell, Mondrian, C#, Visual Basic, Dart, and Hack, and advised on the design of Java, Scala, JavaScript, and Kotlin. He is the original inventor of Rx (Reactive Extensions). At Microsoft, he led incubation around Cloud Programmability; at Facebook, he revamped the server-side programming stack and founded a team building reactive backend infrastructure for the social graph. He holds a honorary professorship in Programming Language Design at the University of Nottingham, has over 149 granted patents, and an h-index of 47.',
   },
-  { name: 'Lin Shi', affiliation: 'Cornell Tech', website: 'https://slimshilin.github.io/', photo: '/images/lin_shi.jpg' },
   {
+    id: 'speaker-behrooz',
+    name: 'Behrooz Omidvar-Tehrani',
+    affiliation: 'Science Lead @ AWS Agentic AI',
+    website: 'https://www.linkedin.com/in/behroozomidvar',
+    photo: '/images/behrooz.png',
+    time: '2:30 - 3:00 pm',
+    title: 'Building the Brain for Coding Agents',
+    abstract: 'Coding agents already incorporate forms of memory, including project context, session histories, and user preferences. However, their memory architectures remain fragmented and insufficient for sustaining the continuity expected of a true programming partner. This talk examines what a principled memory system for coding agents entails. We discuss how distinct forms of remembering, from recalling past interactions to internalizing codebase structure to learning reusable strategies, contribute to the developer experience in fundamentally different ways. Drawing on concrete examples from production systems like Kiro and Claude Code, we identify where current designs succeed and where critical gaps persist, particularly around lifecycle governance, real-time retrieval, and long-term adaptation.',
+    bio: 'Behrooz Omidvar-Tehrani is a Senior Applied Scientist and Science Lead at AWS Agentic AI, where he drives research on agentic code transformation and coding agents. Previously, he was a Research Scientist at LIG (Grenoble Informatics Laboratory) and NAVER LABS Europe, and a Postdoctoral Researcher at The Ohio State University. He holds a PhD in Mathematics and Computer Science from Université Grenoble Alpes.',
+  },
+  {
+    id: 'speaker-waleed',
     name: 'Waleed Kadous',
-    affiliation: 'Cluesmith',
+    affiliation: 'Founder @ Cluesmith',
     website: 'https://www.linkedin.com/in/waleedkadous/',
     photo: '/images/waleed.jpeg',
+    time: '3:30 - 4:00 pm',
     title: 'Codev: An Operating System for AI and Humans to Work Together',
     abstract: 'Codev (codevos.ai) is an open source system for AI and humans to build software together. It builds on four core ideas: specs and plans as source code, multi-model review, enforced processes to deal with AI being non-deterministic, and agents coordinating the work of other agents (architect-builder pattern).<br>Result: one engineer produced 53 PRs (with full design docs, tests, etc.) per week on a 100,000 line codebase; on a "vibe coding" task measured 1.2 points better code on a 10-point scale vs Claude Code (Opus 4.5) alone.',
     bio: 'Waleed Kadous is founder of Cluesmith and creator of Codev. Over 25 years he\'s held Principal Engineer, Senior Director, and Chief Scientist roles at Google, Uber, Canva, and Anyscale. He holds a PhD in AI from UNSW (2000), 40+ patents, and has written influential papers on LLM routing and AI for time series. He\'s currently building Multisage (multi-expert AI) and other projects alongside Codev.',
   },
+  { id: 'speaker-lin', name: 'Lin Shi', affiliation: 'Cornell Tech', website: 'https://slimshilin.github.io/', photo: '/images/lin_shi.jpg', time: '4:00 - 4:30 pm' },
 ]
 
 const organizers = [
@@ -203,6 +241,33 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
   </section>
   -->
 
+  <!-- Program Schedule -->
+  <section id="program" class="section">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-12">
+          <h2 class="section-title text-center">Program Schedule</h2>
+        </div>
+      </div>
+      <div class="program-list">
+        <div class="program-item" v-for="item in programSchedule" :key="`${item.time}-${item.title}`">
+          <div class="program-time">{{ item.time }}</div>
+          <div class="program-details">
+            <h3 class="program-title">
+              <a v-if="item.speakerId" :href="'#' + item.speakerId" @click.prevent="scrollTo(item.speakerId)" class="program-title-link">{{ item.title }}</a>
+              <span v-else>{{ item.title }}</span>
+            </h3>
+            <p v-if="item.speaker" class="program-speaker">
+              <a v-if="item.speakerId" :href="'#' + item.speakerId" @click.prevent="scrollTo(item.speakerId)" class="program-speaker-link">{{ item.speaker }}</a>
+              <span v-else>{{ item.speaker }}</span>
+              <span v-if="item.affiliation"> ({{ item.affiliation }})</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Invited Speakers -->
   <section id="speakers" class="section section-alt">
     <div class="container">
@@ -212,7 +277,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         </div>
       </div>
       <div class="speakers-list">
-        <div class="speaker-card" v-for="s in speakers" :key="s.name">
+        <div class="speaker-card" v-for="s in speakers" :key="s.name" :id="s.id">
           <div class="speaker-photo-col">
             <a v-if="s.photo && s.website" :href="s.website" target="_blank" rel="noopener noreferrer">
               <img class="speaker-photo" :src="s.photo" :alt="s.name">
@@ -230,6 +295,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
             </div>
           </div>
           <div class="speaker-info-col">
+            <p v-if="s.time" class="speaker-time"><i class="bi bi-clock"></i> {{ s.time }}</p>
             <template v-if="s.title">
               <h5 class="speaker-talk-title">{{ s.title }}</h5>
               <div class="speaker-abstract" v-html="s.abstract"></div>
@@ -312,7 +378,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
           <div class="date-list">
             <div class="date-item" v-for="d in dates" :key="d.event">
               <span class="date-badge" v-html="d.date"></span>
-              <span class="date-event">{{ d.event }}</span>
+              <span class="date-event" v-html="d.event"></span>
             </div>
           </div>
           <p class="text-muted mt-4" style="font-size: 0.95rem;">
