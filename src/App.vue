@@ -30,12 +30,44 @@ const dates = [
 
 const speakers = [
   // { name: 'Niranjan Tulpule (tentative)', affiliation: 'Developer AI @ Google', website: 'https://www.linkedin.com/in/niranjantulpule/', photo: '' },
+  {
+    name: 'Behrooz Omidvar-Tehrani',
+    affiliation: 'AWS Agentic AI',
+    website: 'https://omidvartehrani.github.io/',
+    photo: '/images/behrooz.png',
+    title: 'Building the Brain for Coding Agents',
+    abstract: 'Coding agents already incorporate forms of memory, including project context, session histories, and user preferences. However, their memory architectures remain fragmented and insufficient for sustaining the continuity expected of a true programming partner. This talk examines what a principled memory system for coding agents entails. We discuss how distinct forms of remembering, from recalling past interactions to internalizing codebase structure to learning reusable strategies, contribute to the developer experience in fundamentally different ways. Drawing on concrete examples from production systems like Kiro and Claude Code, we identify where current designs succeed and where critical gaps persist, particularly around lifecycle governance, real-time retrieval, and long-term adaptation.',
+    bio: 'Behrooz Omidvar-Tehrani is a Senior Applied Scientist and Science Lead at AWS Agentic AI, where he drives research on agentic code transformation and coding agents. Previously, he was a Research Scientist at LIG (Grenoble Informatics Laboratory) and NAVER LABS Europe, and a Postdoctoral Researcher at The Ohio State University. He holds a PhD in Mathematics and Computer Science from Université Grenoble Alpes.',
+  },
+  {
+    name: 'Erik Meijer',
+    affiliation: 'Leibniz Labs & Normal Computing',
+    website: 'https://www.linkedin.com/in/erikmeijer1',
+    photo: '/images/erik.jpg',
+    title: 'In Code They Act, In Proof We Trust',
+    abstract: '<p>AI agents today execute on blind trust, and the failure modes are already in the headlines: a dealership chatbot agreeing to sell a $76,000 Chevy Tahoe for $1, a coding agent wiping a production database during a code freeze, an "agent skill" quietly installing a keylogger on a developer\'s machine. These are not edge cases. They are the predictable consequence of allowing agents to act without any mechanical guarantee of correctness or safety.</p><p>Execution is irreversible. You cannot unsend a message, unwire a payment, or un-delete a database. In that regime, permitting an unsafe action costs far more than withholding a safe one, and thus the economically rational choice is to refuse to let agents act on unchecked intent alone.</p><p>Automind is an agent harness that enforces this discipline by construction. Before any action runs, the agent must submit its execution plan together with a machine-checkable proof of safety and correctness, written in Universalis, a literate logic programming language designed to be read by humans and verified by machines. A small, auditable checker decides whether the plan is allowed to execute.</p><p>By left-shifting the trust boundary, we no longer have to trust the agent\'s proposal, or even its proof; only the checker. Policy compliance becomes a static property, established before the first side effect. We can finally demand formal proofs, not vibes, from the agents we deploy.</p>',
+    bio: 'Erik Meijer is an accomplished language, API, and type system designer who has worked on the design of Haskell, Mondrian, C#, Visual Basic, Dart, and Hack, and advised on the design of Java, Scala, JavaScript, and Kotlin. He is the original inventor of Rx (Reactive Extensions). At Microsoft, he led incubation around Cloud Programmability; at Facebook, he revamped the server-side programming stack and founded a team building reactive backend infrastructure for the social graph. He holds a honorary professorship in Programming Language Design at the University of Nottingham, has over 149 granted patents, and an h-index of 47.',
+  },
   { name: 'Graham Neubig', affiliation: 'CMU & All Hands AI', website: 'http://www.phontron.com/', photo: '/images/neubig_graham.png' },
-  { name: 'Erik Meijer', affiliation: 'Leibniz Labs & Normal Computing', website: 'https://www.linkedin.com/in/erikmeijer1', photo: '/images/erik.jpg' },
-  { name: 'Behrooz Omidvar-Tehrani', affiliation: 'AWS Agentic AI', website: 'https://omidvartehrani.github.io/', photo: '/images/behrooz.png' },
+  {
+    name: 'Jonathan "Peli" de Halleux',
+    affiliation: 'Microsoft',
+    website: 'https://www.linkedin.com/in/pelidehalleux/',
+    photo: '/images/peli.png',
+    title: 'Inside The Agent Factory',
+    abstract: 'GitHub Agentic Workflows delivers safe and scalable repository automation on top of GitHub Actions and Copilot CLI. Most interestingly, Agentic Workflows is written almost exclusively by agents and used to automate its own software life cycle. In this talk, Peli de Halleux will share lessons learned while building software at scale with the help of 200 daily agents, helping through documentation, testing, specification enforcement or mining or even styling the output of the CLI. We will discuss processes that were discovered during this practice that hint at the future of software factories as Agentic Human Processes.',
+    bio: 'Jonathan "Peli" de Halleux joined the Foundations for Software Engineering (new RiSE) in October 2006. Peli worked in the CLR as a SDET in charge of the Just In Time compiler (2004-2006). Before joining Microsoft, Peli earned a PhD in Applied Mathematics from the Catholic University of Louvain (2000-2004). During his time at RiSE, he built Pex (dynamic symbolic execution), MakeCode (K12 coding editors), GenAIScript (LLM scripting) and recently GitHub Agentic Workflows.',
+  },
   { name: 'Lin Shi', affiliation: 'Cornell Tech', website: 'https://slimshilin.github.io/', photo: '/images/lin_shi.jpg' },
-  { name: 'Jonathan "Peli" de Halleux', affiliation: 'Microsoft', website: 'https://www.linkedin.com/in/pelidehalleux/', photo: '/images/peli.png' },
-  { name: 'Waleed Kadous', affiliation: 'Cluesmith', website: 'https://www.linkedin.com/in/waleedkadous/', photo: '/images/waleed.jpeg' },
+  {
+    name: 'Waleed Kadous',
+    affiliation: 'Cluesmith',
+    website: 'https://www.linkedin.com/in/waleedkadous/',
+    photo: '/images/waleed.jpeg',
+    title: 'Codev: An Operating System for AI and Humans to Work Together',
+    abstract: 'Codev (codevos.ai) is an open source system for AI and humans to build software together. It builds on four core ideas: specs and plans as source code, multi-model review, enforced processes to deal with AI being non-deterministic, and agents coordinating the work of other agents (architect-builder pattern).<br>Result: one engineer produced 53 PRs (with full design docs, tests, etc.) per week on a 100,000 line codebase; on a "vibe coding" task measured 1.2 points better code on a 10-point scale vs Claude Code (Opus 4.5) alone.',
+    bio: 'Waleed Kadous is founder of Cluesmith and creator of Codev. Over 25 years he\'s held Principal Engineer, Senior Director, and Chief Scientist roles at Google, Uber, Canva, and Anyscale. He holds a PhD in AI from UNSW (2000), 40+ patents, and has written influential papers on LLM routing and AI for time series. He\'s currently building Multisage (multi-expert AI) and other projects alongside Codev.',
+  },
 ]
 
 const organizers = [
@@ -171,23 +203,32 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
           <h2 class="section-title text-center">Invited Speakers</h2>
         </div>
       </div>
-      <div class="row g-4 justify-content-center row-cols-1 row-cols-sm-2 row-cols-lg-5">
-        <div class="col" v-for="s in speakers" :key="s.name">
-          <component 
-            :is="s.website ? 'a' : 'div'"
-            v-bind="s.website ? { href: s.website, target: '_blank', rel: 'noopener noreferrer' } : {}"
-            :class="s.website ? 'text-decoration-none' : ''"
-            :style="[s.website ? { display: 'block', color: 'inherit' } : {}, { height: '100%' }]"
-          >
-            <div class="organizer-card h-100">
-              <img v-if="s.photo" class="avatar" :src="s.photo" :alt="s.name" :style="s.objectPosition ? { objectPosition: s.objectPosition } : {}">
-              <div v-else class="avatar d-flex align-items-center justify-content-center bg-light text-muted" style="font-size: 3rem;">
-                <i class="bi bi-person-fill"></i>
-              </div>
-              <h5 style="font-size: 1.05rem" class="mb-2">{{ s.name }}</h5>
-              <p class="affiliation">{{ s.affiliation }}</p>
+      <div class="speakers-list">
+        <div class="speaker-card" v-for="s in speakers" :key="s.name">
+          <div class="speaker-photo-col">
+            <a v-if="s.photo && s.website" :href="s.website" target="_blank" rel="noopener noreferrer">
+              <img class="speaker-photo" :src="s.photo" :alt="s.name">
+            </a>
+            <img v-else-if="s.photo" class="speaker-photo" :src="s.photo" :alt="s.name">
+            <div v-else class="speaker-photo d-flex align-items-center justify-content-center bg-light text-muted" style="font-size: 3rem;">
+              <i class="bi bi-person-fill"></i>
             </div>
-          </component>
+            <div class="speaker-name-block">
+              <h4 class="speaker-name">
+                <a v-if="s.website" :href="s.website" target="_blank" rel="noopener noreferrer">{{ s.name }}</a>
+                <span v-else>{{ s.name }}</span>
+              </h4>
+              <p class="speaker-affiliation">{{ s.affiliation }}</p>
+            </div>
+          </div>
+          <div class="speaker-info-col">
+            <template v-if="s.title">
+              <h5 class="speaker-talk-title">{{ s.title }}</h5>
+              <div class="speaker-abstract" v-html="s.abstract"></div>
+              <p class="speaker-bio"><strong>Bio:</strong> {{ s.bio }}</p>
+            </template>
+            <p v-else class="speaker-tba">Talk details coming soon.</p>
+          </div>
         </div>
       </div>
     </div>
