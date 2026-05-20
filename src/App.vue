@@ -10,7 +10,7 @@ const sections = [
   { id: 'speakers', label: 'Speakers' },
   { id: 'submission', label: 'Call for Papers' },
   { id: 'dates', label: 'Dates' },
-  { id: 'organizers', label: 'Organizers' },
+  { id: 'organizers', label: 'Committee' },
 ]
 
 const topics = [
@@ -34,7 +34,7 @@ const programSchedule = [
   { time: '08:40 - 09:40 am', title: 'AI in SE: Google\'s DevAI Journey for Internal Developer Productivity', speaker: 'Niranjan Tulpule', affiliation: 'VP, Developer AI @ Google', speakerId: 'speaker-niranjan' },
   { time: '09:40 - 10:40 am', title: 'Poster Session & Coffee Break' },
   { time: '10:40 - 11:10 am', title: 'Inside The Agent Factory', speaker: 'Jonathan "Peli" de Halleux', affiliation: 'Microsoft Research & GitHub Next', speakerId: 'speaker-peli' },
-  { time: '11:10 - 11:40 am', title: 'Two Futures of Programming', speaker: 'Graham Neubig', affiliation: 'Carnegie Mellon University & All Hands AI', speakerId: 'speaker-neubig' },
+  { time: '11:10 - 11:40 am', title: 'Two Futures of Programming', speaker: 'Graham Neubig', affiliation: 'Carnegie Mellon University & OpenHands', speakerId: 'speaker-neubig' },
   { time: '11:40 - 12:30 pm', title: 'Panel Discussion', speaker: 'Niranjan Tulpule, Jonathan "Peli" de Halleux, Graham Neubig' },
   { time: '12:30 - 1:30 pm', title: 'Lunch' },
   { time: '1:30 - 2:30 pm', title: 'In Code They Act, In Proof We Trust', speaker: 'Erik Meijer', affiliation: 'Leibniz Labs & Normal Computing', speakerId: 'speaker-erik' },
@@ -72,7 +72,7 @@ const speakers = [
   {
     id: 'speaker-neubig',
     name: 'Graham Neubig',
-    affiliation: 'Carnegie Mellon University & All Hands AI',
+    affiliation: 'Carnegie Mellon University & OpenHands',
     website: 'http://www.phontron.com/',
     photo: '/images/neubig_graham.png',
     time: '11:10 - 11:40 am',
@@ -213,6 +213,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
             <div><i class="bi bi-calendar-event"></i> May 26, 2026</div>
             <div><i class="bi bi-geo-alt"></i> San Jose, California</div>
             <div><i class="bi bi-clock"></i> Full-Day</div>
+            <div><i class="bi bi-building"></i> DoubleTree by Hilton San Jose &middot; Room: San Jose</div>
           </div>
           <p class="mt-4" style="max-width: 800px; font-size: 1.15rem; line-height: 1.7;">
             Co-located with the <strong><a href="https://www.caisconf.org/" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: underline; text-underline-offset: 4px;">1st ACM Conference on AI and Agentic Systems (CAIS 2026)</a></strong>.
@@ -273,12 +274,12 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
     </div>
   </section>
 
-  <!-- Invited Speakers -->
+  <!-- Keynote Speakers -->
   <section id="speakers" class="section section-alt">
     <div class="container">
       <div class="row mb-5">
         <div class="col-12">
-          <h2 class="section-title text-center">Invited Speakers</h2>
+          <h2 class="section-title text-center">Keynote Speakers</h2>
         </div>
       </div>
       <div class="speakers-list">
@@ -323,7 +324,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         <div class="col-lg-8">
           <hr class="section-divider d-lg-none">
           <p class="mb-5" style="font-size: 1.1rem; line-height: 1.8;">
-            The main event will feature invited talks and panel discussions. We offer two submission tracks covering our topics of interest:
+            We offer two submission tracks covering our topics of interest:
             <br>
             • <strong>Poster Track:</strong> A broader showcase welcoming all forms of work, including arXiv preprints, recently accepted papers, and relevant past work.<br>
             • <strong>Paper Track:</strong> For new, original research (long, short, or position papers).
