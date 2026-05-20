@@ -35,14 +35,14 @@ const programSchedule = [
   { time: '09:40 - 10:40 am', title: 'Poster Session & Coffee Break' },
   { time: '10:40 - 11:10 am', title: 'Inside The Agent Factory', speaker: 'Jonathan "Peli" de Halleux', affiliation: 'Microsoft Research & GitHub Next', speakerId: 'speaker-peli' },
   { time: '11:10 - 11:40 am', title: 'Two Futures of Programming', speaker: 'Graham Neubig', affiliation: 'Carnegie Mellon University & All Hands AI', speakerId: 'speaker-neubig' },
-  { time: '11:40 - 12:30 pm', title: 'Panel' },
+  { time: '11:40 - 12:30 pm', title: 'Panel Discussion', speaker: 'Niranjan Tulpule, Jonathan "Peli" de Halleux, Graham Neubig' },
   { time: '12:30 - 1:30 pm', title: 'Lunch' },
   { time: '1:30 - 2:30 pm', title: 'In Code They Act, In Proof We Trust', speaker: 'Erik Meijer', affiliation: 'Leibniz Labs & Normal Computing', speakerId: 'speaker-erik' },
   { time: '2:30 - 3:00 pm', title: 'Building the Brain for Coding Agents', speaker: 'Behrooz Omidvar-Tehrani', affiliation: 'Science Lead @ AWS Agentic AI', speakerId: 'speaker-behrooz' },
   { time: '3:00 - 3:30 pm', title: 'Coffee Break' },
   { time: '3:30 - 4:00 pm', title: 'Codev: An Operating System for AI and Humans to Work Together', speaker: 'Waleed Kadous', affiliation: 'Founder @ Cluesmith', speakerId: 'speaker-waleed' },
   { time: '4:00 - 4:30 pm', title: 'Evaluating Agentic Software Engineering with Terminal-Bench, Harbor Adapters, and Harbor Index', speaker: 'Lin Shi', affiliation: 'Cornell Tech', speakerId: 'speaker-lin' },
-  { time: '4:30 - 5:20 pm', title: 'Panel' },
+  { time: '4:30 - 5:20 pm', title: 'Panel Discussion', speaker: 'Erik Meijer, Behrooz Omidvar-Tehrani, Waleed Kadous, Lin Shi' },
   { time: '5:20 - 5:30 pm', title: 'Closing Remarks' },
 ]
 
