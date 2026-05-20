@@ -35,14 +35,14 @@ const programSchedule = [
   { time: '09:40 - 10:40 am', title: 'Poster Session & Coffee Break' },
   { time: '10:40 - 11:10 am', title: 'Inside The Agent Factory', speaker: 'Jonathan "Peli" de Halleux', affiliation: 'Microsoft Research & GitHub Next', speakerId: 'speaker-peli' },
   { time: '11:10 - 11:40 am', title: 'Two Futures of Programming', speaker: 'Graham Neubig', affiliation: 'Carnegie Mellon University & OpenHands', speakerId: 'speaker-neubig' },
-  { time: '11:40 - 12:30 pm', title: 'Panel Discussion', speaker: 'Niranjan Tulpule, Jonathan "Peli" de Halleux, Graham Neubig' },
+  { time: '11:40 - 12:30 pm', title: 'Panel Discussion: Productivity in the Agentic SE Era', panelSpeakers: [{ name: 'Niranjan Tulpule', id: 'speaker-niranjan' }, { name: 'Jonathan "Peli" de Halleux', id: 'speaker-peli' }, { name: 'Graham Neubig', id: 'speaker-neubig' }] },
   { time: '12:30 - 1:30 pm', title: 'Lunch' },
   { time: '1:30 - 2:30 pm', title: 'In Code They Act, In Proof We Trust', speaker: 'Erik Meijer', affiliation: 'Leibniz Labs & Normal Computing', speakerId: 'speaker-erik' },
   { time: '2:30 - 3:00 pm', title: 'Building the Brain for Coding Agents', speaker: 'Behrooz Omidvar-Tehrani', affiliation: 'Science Lead @ AWS Agentic AI', speakerId: 'speaker-behrooz' },
   { time: '3:00 - 3:30 pm', title: 'Coffee Break' },
   { time: '3:30 - 4:00 pm', title: 'Codev: An Operating System for AI and Humans to Work Together', speaker: 'Waleed Kadous', affiliation: 'Founder @ Cluesmith', speakerId: 'speaker-waleed' },
-  { time: '4:00 - 4:30 pm', title: 'Evaluating Agentic Software Engineering with Terminal-Bench, Harbor Adapters, and Harbor Index', speaker: 'Lin Shi', affiliation: 'Cornell Tech', speakerId: 'speaker-lin' },
-  { time: '4:30 - 5:20 pm', title: 'Panel Discussion', speaker: 'Erik Meijer, Behrooz Omidvar-Tehrani, Waleed Kadous, Lin Shi' },
+  { time: '4:00 - 4:30 pm', title: 'Evaluating Agentic Software Engineering with Terminal-Bench, Harbor Adapters, and Harbor Index', speaker: 'Lin Shi', affiliation: 'Terminal-Bench, Harbor & Cornell', speakerId: 'speaker-lin' },
+  { time: '4:30 - 5:20 pm', title: 'Panel Discussion: Trustworthiness in the Agentic SE Era', panelSpeakers: [{ name: 'Erik Meijer', id: 'speaker-erik' }, { name: 'Behrooz Omidvar-Tehrani', id: 'speaker-behrooz' }, { name: 'Waleed Kadous', id: 'speaker-waleed' }, { name: 'Lin Shi', id: 'speaker-lin' }] },
   { time: '5:20 - 5:30 pm', title: 'Closing Remarks' },
 ]
 
@@ -114,7 +114,7 @@ const speakers = [
     bio: 'Waleed Kadous is founder of Cluesmith and creator of Codev. Over 25 years he\'s held Principal Engineer, Senior Director, and Chief Scientist roles at Google, Uber, Canva, and Anyscale. He holds a PhD in AI from UNSW (2000), 40+ patents, and has written influential papers on LLM routing and AI for time series. He\'s currently building Multisage (multi-expert AI) and other projects alongside Codev.',
   },
   {
-    id: 'speaker-lin', name: 'Lin Shi', affiliation: 'Cornell Tech', website: 'https://slimshilin.github.io/', photo: '/images/lin_shi.png', time: '4:00 - 4:30 pm',
+    id: 'speaker-lin', name: 'Lin Shi', affiliation: 'Terminal-Bench, Harbor & Cornell', website: 'https://slimshilin.github.io/', photo: '/images/lin_shi.png', time: '4:00 - 4:30 pm',
     title: 'Evaluating Agentic Software Engineering with Terminal-Bench, Harbor Adapters, and Harbor Index',
     abstract: '<p>Evaluating coding agents is difficult because benchmarks often require different environments, harnesses, and integration logic. This talk will discuss Terminal-Bench, Harbor Adapters, and Harbor-Index as sequential efforts toward scalable and reliable agent evaluation.<\p>Terminal-Bench provides a realistic terminal-based setting for evaluating coding and tool-using agents. Harbor Adapters become the infrastructure that converts many heterogeneous benchmarks into a unified format, allowing arbitrary agents to be evaluated consistently across diverse tasks. I will present our large-scale evaluation findings, discuss observed agent capabilities and failure modes, and introduce Harbor Index, a curated set of challenging tasks designed to make broad agentic evaluation more practical and affordable.',
     bio: 'Lin Shi is a core member of Terminal Bench and team lead of Harbor Adapters, working on the evaluation, infrastructure, and datasets for language-model agents.',
@@ -267,6 +267,11 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
               <a v-if="item.speakerId" :href="'#' + item.speakerId" @click.prevent="scrollTo(item.speakerId)" class="program-speaker-link">{{ item.speaker }}</a>
               <span v-else>{{ item.speaker }}</span>
               <span v-if="item.affiliation"> ({{ item.affiliation }})</span>
+            </p>
+            <p v-else-if="item.panelSpeakers" class="program-speaker">
+              <template v-for="(ps, idx) in item.panelSpeakers" :key="ps.id">
+                <a :href="'#' + ps.id" @click.prevent="scrollTo(ps.id)" class="program-speaker-link">{{ ps.name }}</a><span v-if="idx < item.panelSpeakers.length - 1">, </span>
+              </template>
             </p>
           </div>
         </div>
