@@ -41,7 +41,7 @@ const programSchedule = [
   { time: '2:30 - 3:00 pm', title: 'Building the Brain for Coding Agents', speaker: 'Behrooz Omidvar-Tehrani', affiliation: 'Science Lead @ AWS Agentic AI', speakerId: 'speaker-behrooz' },
   { time: '3:00 - 3:30 pm', title: 'Coffee Break' },
   { time: '3:30 - 4:00 pm', title: 'Codev: An Operating System for AI and Humans to Work Together', speaker: 'Waleed Kadous', affiliation: 'Founder @ Cluesmith', speakerId: 'speaker-waleed' },
-  { time: '4:00 - 4:30 pm', title: 'Talk Title Coming Soon', speaker: 'Lin Shi', affiliation: 'Cornell Tech', speakerId: 'speaker-lin' },
+  { time: '4:00 - 4:30 pm', title: 'Evaluating Agentic Software Engineering with Terminal-Bench, Harbor Adapters, and Harbor Index', speaker: 'Lin Shi', affiliation: 'Cornell Tech', speakerId: 'speaker-lin' },
   { time: '4:30 - 5:20 pm', title: 'Panel' },
   { time: '5:20 - 5:30 pm', title: 'Closing Remarks' },
 ]
@@ -110,10 +110,15 @@ const speakers = [
     photo: '/images/waleed.jpeg',
     time: '3:30 - 4:00 pm',
     title: 'Codev: An Operating System for AI and Humans to Work Together',
-    abstract: 'Codev (codevos.ai) is an open source system for AI and humans to build software together. It builds on four core ideas: specs and plans as source code, multi-model review, enforced processes to deal with AI being non-deterministic, and agents coordinating the work of other agents (architect-builder pattern).<br>Result: one engineer produced 53 PRs (with full design docs, tests, etc.) per week on a 100,000 line codebase; on a "vibe coding" task measured 1.2 points better code on a 10-point scale vs Claude Code (Opus 4.5) alone.',
+    abstract: '<p>Codev (codevos.ai) is an open source system for AI and humans to build software together. It builds on four core ideas: specs and plans as source code, multi-model review, enforced processes to deal with AI being non-deterministic, and agents coordinating the work of other agents (architect-builder pattern).<\p>Result: one engineer produced 53 PRs (with full design docs, tests, etc.) per week on a 100,000 line codebase; on a "vibe coding" task measured 1.2 points better code on a 10-point scale vs Claude Code (Opus 4.5) alone.',
     bio: 'Waleed Kadous is founder of Cluesmith and creator of Codev. Over 25 years he\'s held Principal Engineer, Senior Director, and Chief Scientist roles at Google, Uber, Canva, and Anyscale. He holds a PhD in AI from UNSW (2000), 40+ patents, and has written influential papers on LLM routing and AI for time series. He\'s currently building Multisage (multi-expert AI) and other projects alongside Codev.',
   },
-  { id: 'speaker-lin', name: 'Lin Shi', affiliation: 'Cornell Tech', website: 'https://slimshilin.github.io/', photo: '/images/lin_shi.jpg', time: '4:00 - 4:30 pm' },
+  {
+    id: 'speaker-lin', name: 'Lin Shi', affiliation: 'Cornell Tech', website: 'https://slimshilin.github.io/', photo: '/images/lin_shi.png', time: '4:00 - 4:30 pm',
+    title: 'Evaluating Agentic Software Engineering with Terminal-Bench, Harbor Adapters, and Harbor Index',
+    abstract: '<p>Evaluating coding agents is difficult because benchmarks often require different environments, harnesses, and integration logic. This talk will discuss Terminal-Bench, Harbor Adapters, and Harbor-Index as sequential efforts toward scalable and reliable agent evaluation.<\p>Terminal-Bench provides a realistic terminal-based setting for evaluating coding and tool-using agents. Harbor Adapters become the infrastructure that converts many heterogeneous benchmarks into a unified format, allowing arbitrary agents to be evaluated consistently across diverse tasks. I will present our large-scale evaluation findings, discuss observed agent capabilities and failure modes, and introduce Harbor Index, a curated set of challenging tasks designed to make broad agentic evaluation more practical and affordable.',
+    bio: 'Lin Shi is a core member of Terminal Bench and team lead of Harbor Adapters, working on the evaluation, infrastructure, and datasets for language-model agents.',
+  },
 ]
 
 const organizers = [
