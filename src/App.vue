@@ -8,6 +8,7 @@ const sections = [
   { id: 'home', label: 'Home' },
   { id: 'program', label: 'Schedule' },
   { id: 'speakers', label: 'Speakers' },
+  { id: 'accepted-papers', label: 'Accepted Papers' },
   { id: 'submission', label: 'Call for Papers' },
   { id: 'dates', label: 'Dates' },
   { id: 'organizers', label: 'Committee' },
@@ -32,7 +33,7 @@ const dates = [
 const programSchedule = [
   { time: '08:30 - 08:40 am', title: 'Opening Remarks' },
   { time: '08:40 - 09:40 am', title: 'AI in SE: Google\'s DevAI Journey for Internal Developer Productivity', speaker: 'Niranjan Tulpule', affiliation: 'VP, Developer AI @ Google', speakerId: 'speaker-niranjan' },
-  { time: '09:40 - 10:40 am', title: 'Poster Session & Coffee Break' },
+  { time: '09:40 - 10:40 am', title: 'Poster Session', linkLabel: 'Accepted Papers', note: 'Coffee will be served from 10:00 - 10:30 am.', sectionId: 'accepted-papers' },
   { time: '10:40 - 11:10 am', title: 'Inside The Agent Factory', speaker: 'Jonathan "Peli" de Halleux', affiliation: 'Microsoft Research & GitHub Next', speakerId: 'speaker-peli' },
   { time: '11:10 - 11:40 am', title: 'Two Futures of Programming', speaker: 'Graham Neubig', affiliation: 'Carnegie Mellon University & OpenHands', speakerId: 'speaker-neubig' },
   { time: '11:40 - 12:30 pm', title: 'Panel Discussion: Productivity in the Agentic SE Era', panelSpeakers: [{ name: 'Niranjan Tulpule', id: 'speaker-niranjan' }, { name: 'Jonathan "Peli" de Halleux', id: 'speaker-peli' }, { name: 'Graham Neubig', id: 'speaker-neubig' }] },
@@ -44,6 +45,49 @@ const programSchedule = [
   { time: '4:00 - 4:30 pm', title: 'Evaluating Agentic Software Engineering with Terminal-Bench, Harbor Adapters, and Harbor Index', speaker: 'Lin Shi', affiliation: 'Terminal-Bench, Harbor & Cornell', speakerId: 'speaker-lin' },
   { time: '4:30 - 5:20 pm', title: 'Panel Discussion: Trustworthiness in the Agentic SE Era', panelSpeakers: [{ name: 'Erik Meijer', id: 'speaker-erik' }, { name: 'Behrooz Omidvar-Tehrani', id: 'speaker-behrooz' }, { name: 'Waleed Kadous', id: 'speaker-waleed' }, { name: 'Lin Shi', id: 'speaker-lin' }] },
   { time: '5:20 - 5:30 pm', title: 'Closing Remarks' },
+]
+
+const acceptedPapers = [
+  {
+    title: 'An Adaptive Multi-Agent RAG Architecture for Software Ecosystem Update Monitoring',
+    authors: 'Shradha Devendra Pujari, Solomon Berhe',
+  },
+  {
+    title: 'Beyond Image Inclusion: A Position on Evidence-Centric Multimodality for Software Engineering Agents',
+    authors: 'Maleknaz Nayebi, Xuchen Tan',
+  },
+  {
+    title: 'CodeScout: An Effective Recipe for Reinforcement Learning of Code Search Agents',
+    authors: 'Lintang Sutawika, Aditya Bharat Soni, Bharath Sriraam R R, Apurva Gandhi, Taha Yassine, Sanidhya Vijayvargiya, Yuchen Li, Xuhui Zhou, Yilin Zhang, Leander Melroy Maben, Graham Neubig',
+  },
+  {
+    title: 'ContextCov: Bridging the Gap Between Developer Intent and Autonomous Agent Execution',
+    authors: 'Reshabh K Sharma',
+  },
+  {
+    title: 'Effective Strategies for Asynchronous Software Engineering Agents',
+    authors: 'Jiayi Geng, Graham Neubig',
+  },
+  {
+    title: 'IntelligenceArena: A Quantitative Framework for Real-Time Scoring of Frontier AI Agents',
+    authors: 'Yuxuan Gao, Megan Wang, Yi Ling Yu',
+  },
+  {
+    title: 'Markdown Mayhem : Taming the Agentic Documentation Explosion',
+    authors: 'Harsha Kokel',
+  },
+  {
+    title: 'Monitoring Agentic Systems Before They\'re Reliable',
+    authors: 'Marisa Ferrara Boston, Glen Hanson, Effi Georgala, JD Hudgens, Heather Frase',
+  },
+  {
+    title: 'Runtime-Structured Task Decomposition for Agentic Coding Systems',
+    authors: 'Shubhi Asthana, Bing Zhang, Ruchi Mahindru, Hima Patel, Chad DeLuca',
+  },
+  {
+    title: 'Terminal Agents Suffice for Enterprise Automation',
+    authors: 'Patrice Bechard, Orlando Marquez Ayala, Emily Chen, Jordan Skelton, Sagar Davasam, Srinivas Sunkara, Vikas Yadav, Sai Rajeswar',
+  },
 ]
 
 const speakers = [
@@ -261,6 +305,10 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
           <div class="program-details">
             <h3 class="program-title">
               <a v-if="item.speakerId" :href="'#' + item.speakerId" @click.prevent="scrollTo(item.speakerId)" class="program-title-link">{{ item.title }}</a>
+              <template v-else-if="item.sectionId && item.linkLabel">
+                <span>{{ item.title }} (</span><a :href="'#' + item.sectionId" @click.prevent="scrollTo(item.sectionId)" class="program-title-link">{{ item.linkLabel }}</a><span>)</span>
+              </template>
+              <a v-else-if="item.sectionId" :href="'#' + item.sectionId" @click.prevent="scrollTo(item.sectionId)" class="program-title-link">{{ item.title }}</a>
               <span v-else>{{ item.title }}</span>
             </h3>
             <p v-if="item.speaker" class="program-speaker">
@@ -273,6 +321,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
                 <a :href="'#' + ps.id" @click.prevent="scrollTo(ps.id)" class="program-speaker-link">{{ ps.name }}</a><span v-if="idx < item.panelSpeakers.length - 1">, </span>
               </template>
             </p>
+            <p v-if="item.note" class="program-note">{{ item.note }}</p>
           </div>
         </div>
       </div>
@@ -280,7 +329,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
   </section>
 
   <!-- Keynote Speakers -->
-  <section id="speakers" class="section section-alt">
+  <section id="speakers" class="section">
     <div class="container">
       <div class="row mb-5">
         <div class="col-12">
@@ -315,6 +364,25 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
             <p v-else class="speaker-tba">Talk details coming soon.</p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accepted Papers -->
+  <section id="accepted-papers" class="section section-alt">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-12">
+          <h2 class="section-title text-center">Accepted Papers</h2>
+        </div>
+      </div>
+      <div class="accepted-papers-list">
+        <article class="accepted-paper-item" v-for="paper in acceptedPapers" :key="paper.title">
+          <div class="accepted-paper-details">
+            <h3 class="accepted-paper-title">{{ paper.title }}</h3>
+            <p class="accepted-paper-authors">{{ paper.authors }}</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
