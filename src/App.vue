@@ -36,14 +36,14 @@ const programSchedule = [
   { time: '09:40 - 10:40 am', title: 'Poster Session', linkLabel: 'Accepted Papers', note: 'Coffee will be served from 10:00 - 10:30 am.', sectionId: 'accepted-papers' },
   { time: '10:40 - 11:10 am', title: 'Inside The Agent Factory', speaker: 'Jonathan "Peli" de Halleux', affiliation: 'Microsoft Research & GitHub Next', speakerId: 'speaker-peli' },
   { time: '11:10 - 11:40 am', title: 'Two Futures of Programming', speaker: 'Graham Neubig', affiliation: 'Carnegie Mellon University & OpenHands', speakerId: 'speaker-neubig' },
-  { time: '11:40 - 12:30 pm', title: 'Discussion Session: Productivity in the Agentic SE Era', panelSpeakers: [{ name: 'Niranjan Tulpule', id: 'speaker-niranjan' }, { name: 'Jonathan "Peli" de Halleux', id: 'speaker-peli' }, { name: 'Graham Neubig', id: 'speaker-neubig' }] },
+  { time: '11:40 - 12:30 pm', title: 'Fishbowl Panel: Productivity in the Agentic SE Era', panelSpeakers: [{ name: 'Niranjan Tulpule', id: 'speaker-niranjan' }, { name: 'Jonathan "Peli" de Halleux', id: 'speaker-peli' }, { name: 'Graham Neubig', id: 'speaker-neubig' }] },
   { time: '12:30 - 1:30 pm', title: 'Lunch' },
   { time: '1:30 - 2:30 pm', title: 'In Code They Act, In Proof We Trust', speaker: 'Erik Meijer', affiliation: 'Leibniz Labs & Normal Computing', speakerId: 'speaker-erik' },
   { time: '2:30 - 3:00 pm', title: 'Building the Brain for Coding Agents', speaker: 'Behrooz Omidvar-Tehrani', affiliation: 'Science Lead @ AWS Agentic AI', speakerId: 'speaker-behrooz' },
   { time: '3:00 - 3:30 pm', title: 'Coffee Break' },
   { time: '3:30 - 4:00 pm', title: 'Codev: An Operating System for AI and Humans to Work Together', speaker: 'Waleed Kadous', affiliation: 'Founder @ Cluesmith', speakerId: 'speaker-waleed' },
   { time: '4:00 - 4:30 pm', title: 'Evaluating Agentic Software Engineering with Terminal-Bench, Harbor Adapters, and Harbor Index', speaker: 'Lin Shi', affiliation: 'Terminal-Bench, Harbor & Cornell', speakerId: 'speaker-lin' },
-  { time: '4:30 - 5:20 pm', title: 'Discussion Session: Trustworthiness in the Agentic SE Era', panelSpeakers: [{ name: 'Erik Meijer', id: 'speaker-erik' }, { name: 'Behrooz Omidvar-Tehrani', id: 'speaker-behrooz' }, { name: 'Waleed Kadous', id: 'speaker-waleed' }, { name: 'Lin Shi', id: 'speaker-lin' }] },
+  { time: '4:30 - 5:20 pm', title: 'Fishbowl Panel: Trustworthiness in the Agentic SE Era', panelSpeakers: [{ name: 'Erik Meijer', id: 'speaker-erik' }, { name: 'Behrooz Omidvar-Tehrani', id: 'speaker-behrooz' }, { name: 'Waleed Kadous', id: 'speaker-waleed' }, { name: 'Lin Shi', id: 'speaker-lin' }] },
   { time: '5:20 - 5:30 pm', title: 'Closing Remarks' },
 ]
 
