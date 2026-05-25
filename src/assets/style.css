@@ -225,6 +225,13 @@ body {
   border-bottom-color: var(--primary);
 }
 
+.program-room {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-left: 0.75rem;
+}
+
 .program-note {
   color: var(--text-muted);
   font-size: 0.9rem;

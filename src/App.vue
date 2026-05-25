@@ -33,14 +33,14 @@ const dates = [
 const programSchedule = [
   { time: '08:30 - 08:40 am', title: 'Opening Remarks' },
   { time: '08:40 - 09:40 am', title: 'AI in SE: Google\'s DevAI Journey for Internal Developer Productivity', speaker: 'Niranjan Tulpule', affiliation: 'VP, Developer AI @ Google', speakerId: 'speaker-niranjan' },
-  { time: '09:40 - 10:40 am', title: 'Poster Session', linkLabel: 'Accepted Papers', note: 'Coffee will be served from 10:00 - 10:30 am.', sectionId: 'accepted-papers' },
+  { time: '09:40 - 10:40 am', title: 'Poster Session', linkLabel: 'Accepted Papers', room: 'Carmel/Monterey', note: 'Coffee served outside Bayshore Ballroom from 10:00 - 10:30 am.', sectionId: 'accepted-papers' },
   { time: '10:40 - 11:10 am', title: 'Inside The Agent Factory', speaker: 'Jonathan "Peli" de Halleux', affiliation: 'Microsoft Research & GitHub Next', speakerId: 'speaker-peli' },
   { time: '11:10 - 11:40 am', title: 'Two Futures of Programming', speaker: 'Graham Neubig', affiliation: 'Carnegie Mellon University & OpenHands', speakerId: 'speaker-neubig' },
   { time: '11:40 - 12:30 pm', title: 'Fishbowl Panel: Productivity in the Agentic SE Era', panelSpeakers: [{ name: 'Niranjan Tulpule', id: 'speaker-niranjan' }, { name: 'Jonathan "Peli" de Halleux', id: 'speaker-peli' }, { name: 'Graham Neubig', id: 'speaker-neubig' }] },
-  { time: '12:30 - 1:30 pm', title: 'Lunch' },
+  { time: '12:30 - 1:30 pm', title: 'Lunch', room: 'Gateway Ballroom' },
   { time: '1:30 - 2:30 pm', title: 'In Code They Act, In Proof We Trust', speaker: 'Erik Meijer', affiliation: 'Leibniz Labs & Normal Computing', speakerId: 'speaker-erik' },
   { time: '2:30 - 3:00 pm', title: 'Building the Brain for Coding Agents', speaker: 'Behrooz Omidvar-Tehrani', affiliation: 'Science Lead @ AWS Agentic AI', speakerId: 'speaker-behrooz' },
-  { time: '3:00 - 3:30 pm', title: 'Coffee Break' },
+  { time: '3:00 - 3:30 pm', title: 'Coffee Break', room: 'Outside Bayshore Ballroom' },
   { time: '3:30 - 4:00 pm', title: 'Codev: An Operating System for AI and Humans to Work Together', speaker: 'Waleed Kadous', affiliation: 'Founder @ Cluesmith', speakerId: 'speaker-waleed' },
   { time: '4:00 - 4:30 pm', title: 'Evaluating Agentic Software Engineering with Terminal-Bench, Harbor Adapters, and Harbor Index', speaker: 'Lin Shi', affiliation: 'Terminal-Bench, Harbor & Cornell', speakerId: 'speaker-lin' },
   { time: '4:30 - 5:20 pm', title: 'Fishbowl Panel: Trustworthiness in the Agentic SE Era', panelSpeakers: [{ name: 'Erik Meijer', id: 'speaker-erik' }, { name: 'Behrooz Omidvar-Tehrani', id: 'speaker-behrooz' }, { name: 'Waleed Kadous', id: 'speaker-waleed' }, { name: 'Lin Shi', id: 'speaker-lin' }] },
@@ -310,6 +310,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
               </template>
               <a v-else-if="item.sectionId" :href="'#' + item.sectionId" @click.prevent="scrollTo(item.sectionId)" class="program-title-link">{{ item.title }}</a>
               <span v-else>{{ item.title }}</span>
+              <span v-if="item.room" class="program-room"><i class="bi bi-geo-alt"></i> {{ item.room }}</span>
             </h3>
             <p v-if="item.speaker" class="program-speaker">
               <a v-if="item.speakerId" :href="'#' + item.speakerId" @click.prevent="scrollTo(item.speakerId)" class="program-speaker-link">{{ item.speaker }}</a>
