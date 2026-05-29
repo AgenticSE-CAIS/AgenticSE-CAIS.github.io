@@ -63,6 +63,7 @@ const acceptedPapers = [
   {
     title: 'ContextCov: Bridging the Gap Between Developer Intent and Autonomous Agent Execution',
     authors: 'Reshabh K Sharma',
+    award: 'Best Paper',
   },
   {
     title: 'Effective Strategies for Asynchronous Software Engineering Agents',
@@ -83,10 +84,58 @@ const acceptedPapers = [
   {
     title: 'Runtime-Structured Task Decomposition for Agentic Coding Systems',
     authors: 'Shubhi Asthana, Bing Zhang, Ruchi Mahindru, Hima Patel, Chad DeLuca',
+    award: 'Best Poster',
   },
   {
     title: 'Terminal Agents Suffice for Enterprise Automation',
     authors: 'Patrice Bechard, Orlando Marquez Ayala, Emily Chen, Jordan Skelton, Sagar Davasam, Srinivas Sunkara, Vikas Yadav, Sai Rajeswar',
+  },
+]
+
+const acceptedPosters = [
+  {
+    title: 'TAI3: Testing Agent Integrity in Interpreting User Intent',
+    authors: 'Shiwei Feng, Xiangzhe Xu, Xuan Chen, Kaiyuan Zhang, Syed Yusuf Ahmed, Zian Su, Mingwei Zheng, Xiangyu Zhang',
+  },
+  {
+    title: 'WatchPoint: Executable User Feedback for Real-World Agentic Web Development',
+    authors: 'Guanqun Yang, Wei Yang, Xueqing Liu',
+  },
+  {
+    title: 'Locus: Agentic Predicate Synthesis for Directed Fuzzing',
+    authors: 'Jie Zhu, Chihao Shen, Ziyang Li, Jiahao Yu, Yizheng Chen, Kexin Pei',
+  },
+  {
+    title: 'Order Matters! Context-Order Bias in Agentic Software Fault Localization',
+    authors: 'Md Nakhla Rafi, Dong Jae Kim, Tse-Hsun (Peter) Chen, Shaohua Wang',
+  },
+  {
+    title: 'Towards a Human-in-the-Loop Framework for Reliable Patch Evaluation Using an LLM-as-a-Judge',
+    authors: 'Sherry Shi, Renyao Wei, Michele Tufano, José Cambronero, Runxiang Cheng, Franjo Ivančić, Pat Rondon',
+  },
+  {
+    title: 'Abstain and Validate: A Dual-LLM Policy for Reducing Noise in Agentic Program Repair',
+    authors: 'José Cambronero, Michele Tufano, Sherry Shi, Renyao Wei, Grant Uy, Runxiang Cheng, Chin-Jung Liu, Shiying Pan, Pat Rondon, Satish Chandra',
+  },
+  {
+    title: 'OGX: An Open Source, Vendor-Neutral Runtime for Agentic Coding Systems',
+    authors: 'Francisco Javier Arceo, Varsha Prasad Narsing',
+  },
+  {
+    title: 'TestWeaver: Execution-aware, Feedback-driven Regression Testing Generation with Large Language Models',
+    authors: 'Cuong Chi Le, Cuong Duc Van, Tung Duy Vu, Thai Minh Pham Vu, Hoang N. Phan, Huy N. Phan, Tien N. Nguyen',
+  },
+  {
+    title: 'Large Language Model-Aided Partial Program Dependence Analysis',
+    authors: 'Xiaokai Rong, Aashish Yadavally, Tien N. Nguyen',
+  },
+  {
+    title: 'Towards AI as a Collaborative Partner: A Taxonomy of AI Agent Behavior in Software Engineering',
+    authors: 'Tao Dong, Harini Sampath, Sherry Shi, Andrew Macvean',
+  },
+  {
+    title: 'Enhancing LLM Code Generation with Ensembles: A Similarity-Based Selection Approach',
+    authors: 'Tarek Mahmud, Bin Duan, Corina S. Păsăreanu, Guowei Yang',
   },
 ]
 
@@ -369,19 +418,49 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
     </div>
   </section>
 
-  <!-- Accepted Papers -->
+  <!-- Accepted Papers & Posters -->
   <section id="accepted-papers" class="section section-alt">
     <div class="container">
       <div class="row mb-5">
         <div class="col-12">
-          <h2 class="section-title text-center">Accepted Papers</h2>
+          <h2 class="section-title text-center">Accepted Papers & Posters</h2>
+        </div>
+      </div>
+      
+      <div class="row mb-4">
+        <div class="col-12">
+          <h3 class="text-center" style="font-size: 1.75rem; font-weight: 700; color: var(--primary);">Papers</h3>
+        </div>
+      </div>
+      <div class="accepted-papers-list mb-5">
+        <article class="accepted-paper-item" v-for="paper in acceptedPapers" :key="paper.title">
+          <div class="accepted-paper-details d-flex justify-content-between align-items-start gap-3">
+            <div>
+              <h3 class="accepted-paper-title">{{ paper.title }}</h3>
+              <p class="accepted-paper-authors">{{ paper.authors }}</p>
+            </div>
+            <div v-if="paper.award" class="flex-shrink-0 mt-1">
+              <span class="badge bg-warning text-dark px-3 py-2 shadow-sm" style="font-size: 0.95rem; font-weight: 700;"><i class="bi bi-trophy-fill me-1"></i> {{ paper.award }}</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="row mb-4">
+        <div class="col-12">
+          <h3 class="text-center" style="font-size: 1.75rem; font-weight: 700; color: var(--primary);">Posters</h3>
         </div>
       </div>
       <div class="accepted-papers-list">
-        <article class="accepted-paper-item" v-for="paper in acceptedPapers" :key="paper.title">
-          <div class="accepted-paper-details">
-            <h3 class="accepted-paper-title">{{ paper.title }}</h3>
-            <p class="accepted-paper-authors">{{ paper.authors }}</p>
+        <article class="accepted-paper-item" v-for="poster in acceptedPosters" :key="poster.title">
+          <div class="accepted-paper-details d-flex justify-content-between align-items-start gap-3">
+            <div>
+              <h3 class="accepted-paper-title">{{ poster.title }}</h3>
+              <p class="accepted-paper-authors">{{ poster.authors }}</p>
+            </div>
+            <div v-if="poster.award" class="flex-shrink-0 mt-1">
+              <span class="badge bg-warning text-dark px-3 py-2 shadow-sm" style="font-size: 0.95rem; font-weight: 700;"><i class="bi bi-trophy-fill me-1"></i> {{ poster.award }}</span>
+            </div>
           </div>
         </article>
       </div>
